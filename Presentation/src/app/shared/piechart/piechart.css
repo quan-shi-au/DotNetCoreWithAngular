@@ -1,0 +1,24 @@
+﻿.manager-piechart {
+    /*height: 260px;*/
+    /*margin-bottom:20px;*/
+}
+
+.manager-piechart-legends {
+    list-style-type: none;
+}
+
+.manager-piechart-nodata {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+
+    .manager-piechart {
+        /*height: 300px;*/
+    }
+
+    .manager-piechart-legends {
+        padding-left: 80px;
+    }
+}

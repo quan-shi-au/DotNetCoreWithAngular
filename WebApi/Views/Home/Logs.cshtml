@@ -1,0 +1,148 @@
+@using Microsoft.Extensions.FileProviders
+@model  IDirectoryContents
+
+<h2>manager Logs</h2>
+
+<html>
+<head>
+    <style>
+    form {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+        button {
+            background-color: #467dde;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+ 
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <form id="logform">
+        @*<div class="imgcontainer">
+            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>*@
+
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder=" " name="uname" id="txtn" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder=" " name="psw" id="txtp" required>
+
+            <button type="button" id="post-btn">Login</button>
+
+        </div>
+
+
+    </form> 
+
+    <div id="divFileList">
+        <ul id="loglist">
+         
+        </ul> 
+    </div>
+    <script>
+
+        $("#post-btn").click(function () {
+
+            $("#post-btn").text("Logging in")
+            $.ajax({
+                type: "POST",
+                url: "Logs",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                data: JSON.stringify({ "un": $("#txtn").val(), "pw": $("#txtp").val()}),
+                dataType: 'json',
+                success: function (data) {
+
+                    if (data == "failed")
+                    {
+                        alert('Invalid username or passowrd');
+                        window.location.reload();
+
+                    }
+
+                    $("#logform").hide();
+                    $("#divFileList").show();
+
+                    data.contents.sort(function (item1, item2) { return item1.name.localeCompare(item2.name)});
+
+                    for (var i in data.contents) {
+                        appendLI(data.contents[i].name);
+                    }
+                },
+                error: function () {
+                    $("#post-btn").text("Log in")
+
+                }
+            });
+        });
+
+        function appendLI(name) {
+ 
+            $("#loglist").append("<a href='/download?n=" + name + "'>" + name +"</a> </br>");
+        }
+    </script>
+</body>
+</html>
+
+
+
+ 

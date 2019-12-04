@@ -1,0 +1,48 @@
+﻿.manager-subscription-detail {
+    /*height:260px;*/
+    padding-bottom: 15px;
+}
+
+.manager-subscription-no-seat-data {
+    margin-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.manager-device-type-icon {
+    font-size: x-large;
+}
+
+.manager-subscription-detail-value {
+    font-weight: normal !important;
+}
+
+.flexbox-container {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}
+
+@media (max-width: 1200px) {
+    .pull-right {
+        float: none !important;
+    }
+
+    .pull-left {
+        float: none !important;
+    }
+
+    .control-label {
+        width: 100%;
+        clear: both;
+        margin-top: 5px;
+    }
+
+    .manager-subscription-detail {
+        /*height: 450px;*/
+    }
+
+    .flexbox-container {
+        display: inherit; 
+    }
+}

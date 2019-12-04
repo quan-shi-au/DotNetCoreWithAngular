@@ -1,0 +1,35 @@
+﻿.dashboard-enterprise {
+    border-radius: 6px;
+    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+    background-color: #FFFFFF;
+    color: #252422;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px;
+}
+
+.dashboard-subscription {
+    margin: 1px;
+    /*border:thin;
+    border-style: solid;*/
+
+    /*border-bottom:solid;
+    border-bottom-style: solid;*/
+}
+
+.ent-dashboard-subscription-header {
+    font-weight:bold;
+    /*padding: 0px;*/
+}
+
+.ent-dashboard-subscription-column {
+    /*padding: 0px;*/
+}
+
+.manager-dashboard-overview-subtitle {
+    padding-bottom:10px;
+}
+
+.manager-no-subscription {
+    margin-left: 10px;
+}

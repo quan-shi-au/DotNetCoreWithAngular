@@ -1,0 +1,15 @@
+
+<div class="wrapper">
+    <div class="sidebar" data-active-color="success">
+        <sidebar-cmp></sidebar-cmp>
+    </div>
+    <div class="main-panel" (scroll)="scrollCalled();">
+        <navbar-cmp></navbar-cmp>
+        <router-outlet></router-outlet>
+        <div>
+            <footer-cmp></footer-cmp>
+        </div>
+    </div>
+
+</div>
+<!--<fixedplugin-cmp></fixedplugin-cmp>-->

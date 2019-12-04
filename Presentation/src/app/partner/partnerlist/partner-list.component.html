@@ -1,0 +1,107 @@
+<div class="main-content" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card ent-page-subtitle">
+                    <div class="card-header">
+                        <div>
+                            View / Add Partners
+                            <div class="ent-page-subtitle-button">
+                                <button type="button" class="btn btn-default" (click)="addPartner(partnerForm);">Add Partner</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="dashboard-partner">
+                    <h4 class="card-title ent-font-bold">List</h4>
+                    <h5 class="card-title">Partner List</h5>
+                </div>
+
+                <div class="card">
+                    <div class="card-content table-responsive table-full-width">
+                        <table class="table manager-table-list manager-table-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="ent-font-bold">{{ headerRow[0] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[1] }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let partner of partners">
+                                    <td class="manager-table-wrap">{{partner.name}}</td>
+                                    <td class="manager-table-wrap">{{partner.location}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <app-pagination [offset]="localOffset" [size]="localCount" [limit]="localLimit" (pageChange)="getPartnersWithPage($event)"></app-pagination>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<modal id="partner-insert-modal">
+    <div class="custom-modal" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+
+
+
+        <div class="custom-modal-body">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form #partnerForm="ngForm" novalidate (ngSubmit)="submitPartner(partnerForm)">
+                        <div class="ent-popup-content">
+
+                            <modalheader-cmp [caption]="localCaption" [title]="localTitle" [resetMargin]="resetMargin" (closeModal)="closeModalLocal($event)">
+                            </modalheader-cmp>
+
+                            <div class="card-content">
+                                <div class="form-group">
+                                    <label for="name">Partner name:</label>
+                                    <input type="text" maxlength="250" class="form-control" id="name" name="name" (ngModel)="partner.name" (keyup)="validateName(partnerForm)">
+                                    <small class="text-danger" [hidden]="isNameValid || !partnerForm.controls.name?.dirty || !partnerForm.controls.name?.touched">
+                                        Partner name should be more than 3 characters.
+                                    </small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="location">Location:</label>
+                                    <input type="text" maxlength="250" class="form-control" id="location" name="location" (ngModel)="partner.location" (keyup)="validateLocation(partnerForm)">
+                                    <small class="text-danger" [hidden]="isLocationValid || !partnerForm.controls.location?.dirty || !partnerForm.controls.location?.touched">
+                                        Partner location is required.
+                                    </small>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default pull-right" [disabled]="!isFormValid">Save</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <alert></alert>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="custom-modal-background"></div>
+</modal>

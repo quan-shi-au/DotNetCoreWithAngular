@@ -1,0 +1,63 @@
+<div class="main-content" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card ent-page-subtitle">
+                    <div class="card-header">
+                        <div>
+                            View / Generate Reports
+                            <div class="ent-page-subtitle-button">
+                                <button type="button" class="btn btn-default" (click)="generateReport();">Generate Report</button>
+                                <button type="button" class="btn btn-default" (click)="getReports();">Refresh</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="dashboard-Report">
+                    <h4 class="card-title ent-font-bold">List</h4>
+                    <h5 class="card-title">Report List</h5>
+                </div>
+
+                <div class="card">
+                    <div class="card-content table-responsive table-full-width">
+                        <table class="table manager-table-list manager-table-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="ent-font-bold">{{ headerRow[0] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[1] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[2] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[3] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[4] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[5] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[6] }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let Report of Reports" [class.failed-status]="Report.status=='failed'">
+                                    <td class="manager-table-wrap">{{Report.id}}</td>
+                                    <td class="manager-table-wrap">{{Report.reportsCount}}</td>
+                                    <td class="manager-table-wrap">{{Report.startTimeUTC}}</td>
+                                    <td class="manager-table-wrap">{{Report.endTimeUTC}}</td>
+                                    <td class="manager-table-wrap">{{Report.startTimeLocal | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+                                    <td class="manager-table-wrap">{{Report.endTimeLocal | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                                    <td class="manager-table-wrap">{{Report.status}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

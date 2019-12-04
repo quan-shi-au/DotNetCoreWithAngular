@@ -1,0 +1,11 @@
+﻿<ul class="pagination manager-pagination-bar">
+    <li><a href="javascript:void(0)" [class.disabled]="currentPage == 1"  (click)="selectPage(currentPage - 1, $event)"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+
+    <li *ngFor="let page of pages | async" [class.active]="page == currentPage">
+        <a href="javascript:void(0)" (click)="selectPage(page, $event)">{{page}}</a>
+    </li>
+
+    <li><a href="javascript:void(0)"  [class.disabled]="currentPage == totalPages" (click)="selectPage(currentPage + 1, $event)" ><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+</ul>
+
+ 

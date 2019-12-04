@@ -1,0 +1,89 @@
+<div class="main-content" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card ent-page-subtitle">
+                    <div class="card-header manager-dashboard-overview-subtitle">
+                        <div class="ent-font-bold">
+                            {{ 'DashboardOverview.PageSubtitle' | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <div class="dashboard-partner" *ngFor="let dashboardPartner of dashboardOverview.dashboardPartners">
+
+                        <div class="card-header">
+                            <h4 class="card-title ent-font-bold">{{dashboardPartner.partnerName}}</h4>
+                        </div>
+
+                        <div class="dashboard-enterprise" [hidden]="dashboardPartner.dashboardEnterprises.length > 0">
+                            <div class="card-header">
+                                <h5 class="card-title">{{'DashboardOverview.NoEnterprises' | translate}}</h5>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-enterprise" *ngFor="let dashboardEnterprise of dashboardPartner.dashboardEnterprises">
+
+                            <div class="card-header">
+                                <h5 class="card-title">{{dashboardEnterprise.enterpriseName}}</h5>
+                            </div>
+
+                            <div [hidden]="dashboardEnterprise.subscriptions.length > 0" class="manager-no-subscription">
+                                {{'DashboardOverview.NoSubscriptions' | translate}}
+                            </div>
+
+                            <div class="card-content table-responsive table-full-width dashboard-subscription" [hidden]="dashboardEnterprise.subscriptions.length == 0">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="ent-dashboard-subscription-header">{{ headerRow[0] }}</th>
+                                            <th class="ent-dashboard-subscription-header">{{ headerRow[1] }}</th>
+                                            <th class="ent-dashboard-subscription-header">{{ headerRow[2] }}</th>
+                                            <th class="ent-dashboard-subscription-header">{{ headerRow[3] }}</th>
+                                            <th class="ent-dashboard-subscription-header">{{ headerRow[4] }}</th>
+                                            <th class="ent-dashboard-subscription-header">{{ headerRow[5] }}</th>
+                                            <th class="ent-dashboard-subscription-header">{{ headerRow[6] }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let subscription of dashboardEnterprise.subscriptions">
+                                            <td class="ent-dashboard-subscription-column">{{subscription.name}}</td>
+                                            <td class="ent-dashboard-subscription-column">{{subscription.productName}}</td>
+                                            <td class="ent-dashboard-subscription-column">{{subscription.creationTime | date : 'dd/MM/yyyy'}}</td>
+                                            <td class="ent-dashboard-subscription-column">{{subscription.seatCount}}</td>
+                                            <td class="ent-dashboard-subscription-column" [ngClass]="{'status-active' : subscription.status=='Active', 'status-cancelled' : subscription.status=='Cancelled'}">{{subscription.status}}</td>
+                                            <td class="td-actions text-middle ent-dashboard-subscription-column">
+                                                <button type="button" class="btn" [disabled]="subscription.status!='Active'" (click)="viewLicence(subscription.id);">{{'DashboardOverview.View' | translate}}</button>
+                                            </td>
+                                            <td class="td-actions text-middle ent-dashboard-subscription-column">
+                                                <button type="button" class="btn" [disabled]="subscription.status!='Active' || userRole == 2" (click)="viewSeatDetail(subscription.id, subscription.brandId, subscription.licenceKey, subscription.licencingEnvironment);">{{'SeatDetail.SeatDetailButton' | translate}}</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!--<div class="ent-subscription-separator"></div>-->
+
+                        </div> <!--dashboard-enterprise-->
+                    </div> <!--dashboard-partner-->
+                    </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,128 @@
+<div class="main-content" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card ent-page-subtitle">
+                    <div class="card-header">
+                        <div>
+                            View / Add Enterprises
+                            <div class="ent-page-subtitle-button">
+                                <button type="button" class="btn btn-default" (click)="addEnterprise(enterpriseForm);">Add Enterprise</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="dashboard-partner">
+                    <h4 class="card-title ent-font-bold">List</h4>
+                    <h5 class="card-title">Enterprise List</h5>
+                </div>
+
+                <div class="card">
+                    <div class="card-content table-responsive table-full-width">
+                        <table class="table manager-table-list manager-table-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="ent-font-bold">{{ headerRow[0] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[1] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[2] }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let enterprise of enterprises">
+                                    <td class="manager-table-wrap">{{enterprise.partner.name}}</td>
+                                    <td class="manager-table-wrap">{{enterprise.name}}</td>
+                                    <td class="manager-table-wrap">{{enterprise.location}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <app-pagination [offset]="localOffset" [size]="localCount" [limit]="localLimit" (pageChange)="getEnterpriseListWithPage($event)"></app-pagination>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<modal id="enterprise-insert-modal">
+    <div class="custom-modal" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+        <div class="custom-modal-body">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form #enterpriseForm="ngForm" novalidate (ngSubmit)="submitEnterprise(enterpriseForm)">
+                        <div class="ent-popup-content">
+
+                            <modalheader-cmp [caption]="localCaption" [title]="localTitle" [resetMargin]="resetMargin" (closeModal)="closeModal()">
+                            </modalheader-cmp>
+
+                            <div class="card-content">
+
+                                <div class="form-group">
+                                    <br />
+                                    <div>Partner</div>
+                                    <div class="dropdown">
+                                        <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();selectPartnerButtonClick();">
+                                            {{selectedPartnerName}}
+                                            <b class="caret"></b>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li *ngFor="let partner of partners">
+                                                <a href (click)="$event.preventDefault();selectPartner(partner);">{{partner.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <small class="text-danger" [hidden]="isPartnerValid || isPartnerNotToched">
+                                        Partner is required.
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Enterprise name:</label>
+                                    <input type="text" maxlength="250" class="form-control" id="name" name="name" [(ngModel)]="viewModel.name" (keyup)="validateName(enterpriseForm)">
+                                    <small class="text-danger" [hidden]="isNameValid || !enterpriseForm.controls.name?.dirty || !enterpriseForm.controls.name?.touched">
+                                        Enterprise name should be more than 3 characters.
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="location">Location:</label>
+                                    <input type="text" maxlength="250" class="form-control" id="location" name="location" [(ngModel)]="viewModel.location" (keyup)="validateLocation(enterpriseForm)">
+                                    <small class="text-danger" [hidden]="isLocationValid || !enterpriseForm.controls.location?.dirty || !enterpriseForm.controls.location?.touched">
+                                        Enterprise location is required.
+                                    </small>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default pull-right" [disabled]="!isFormValid">Save</button>
+                                </div>
+
+                                <alert></alert>
+
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="custom-modal-background"></div>
+
+</modal>

@@ -1,0 +1,302 @@
+<div class="main-content" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+
+    <!--<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <div class="card-header">
+                        <h4 class="card-title manager-content-title">Users Management</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card ent-page-subtitle">
+                    <div class="card-header">
+                        <div>
+                            View / Add User
+                            <div class="ent-page-subtitle-button">
+                                <button type="button" class="btn btn-default" (click)="addUser(userProfileForm);">Add User</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="dashboard-partner">
+                    <h4 class="card-title ent-font-bold">List</h4>
+                    <h5 class="card-title">User List</h5>
+                </div>
+
+
+                <div class="card">
+
+                    <form #searchForm="ngForm" class="form-horizontal" novalidate (ngSubmit)="search(searchForm)">
+                        <div class="card-content table-responsive table-full-width">
+                            <table class="table manager-table-list">
+                                <tbody>
+                                    <tr>
+                                        <td class="searchbar-row-separation "></td>
+                                        <td class="searchbar-row-separation ent-font-bold">First Name</td>
+                                        <td class="searchbar-row-separation ent-font-bold">Last Name</td>
+                                        <td class="searchbar-row-separation ent-font-bold">User Name</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="searchbar-row-separation ent-font-bold">
+                                            
+                                        </td>
+
+                                        <td class="searchbar-row-separation">
+                                            <input type="text" maxlength="250" class="form-control" id="firstName" name="firstName" [(ngModel)]="userFilter.firstName">
+                                        </td>
+
+                                        <td class="searchbar-row-separation">
+                                            <input type="text" maxlength="250" class="form-control" id="lastName" name="lastName" [(ngModel)]="userFilter.lastName">
+                                        </td>
+
+                                        <td class="searchbar-row-separation">
+                                            <input type="text" maxlength="250" class="form-control" id="userName" name="userName" [(ngModel)]="userFilter.userName">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="searchbar-row-separation ent-font-bold"></td>
+                                        <td class="searchbar-row-separation ent-font-bold">Role</td>
+                                        <td class="searchbar-row-separation ent-font-bold">Partner</td>
+                                        <td class="searchbar-row-separation ent-font-bold">Enterprise</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="searchbar-row-separation ent-font-bold">Search Filter</td>
+                                        <td class="searchbar-row-separation">
+                                            <div class="dropdown">
+                                                <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                                    {{selectedSearchRoleDescription}}
+                                                    <b class="caret"></b>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li *ngFor="let userRoleMapping of searchUserRoleMappings">
+                                                        <a href (click)="$event.preventDefault();selectSearchUserRole(userRoleMapping);" [innerHTML]="userRoleMapping.description"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td class="searchbar-row-separation">
+                                            <div class="dropdown">
+                                                <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                                    {{selectedSearchPartnerName}}
+                                                    <b class="caret"></b>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li *ngFor="let partner of searchPartners">
+                                                        <a href (click)="$event.preventDefault();selectSearchPartner(partner);" [innerHTML]="partner.name"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td class="searchbar-row-separation">
+                                            <div class="dropdown">
+                                                <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                                    {{selectedSearchEnterpriseName}}
+                                                    <b class="caret"></b>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li *ngFor="let enterprise of searchEnterprises">
+                                                        <a href (click)="$event.preventDefault();selectSearchEnterprise(enterprise);" [innerHTML]="enterprise.name"></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </td>
+                                        <td class="searchbar-row-separation">
+                                            <button type="submit" class="btn btn-default" (click)="getUsersWithPage(1)">Search</button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="manager-separator"></div>
+                        </div>
+                    </form>
+
+
+
+                    <div class="card-content table-responsive table-full-width">
+                        <table class="table manager-table-list manager-table-wrap">
+                            <thead>
+                                <tr>
+                                    <th>{{ headerRow[0] }}</th>
+                                    <th>{{ headerRow[1] }}</th>
+                                    <th>{{ headerRow[2] }}</th>
+                                    <th>{{ headerRow[3] }}</th>
+                                    <th>{{ headerRow[4] }}</th>
+                                    <th>{{ headerRow[5] }}</th>
+                                    <th>{{ headerRow[6] }}</th>
+                                    <th>{{ headerRow[7] }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of viewModel">
+                                    <td>{{user.roleDescription}}</td>
+                                    <td class="manager-table-wrap">{{user.username}}</td>
+                                    <td class="manager-table-wrap">{{user.firstName}}</td>
+                                    <td class="manager-table-wrap">{{user.lastName}}</td>
+                                    <td class="manager-table-wrap">{{user.partner?.name}}</td>
+                                    <td class="manager-table-wrap">{{user.enterprise?.name}}</td>
+                                    <td [ngClass]="{'status-active' : user.status=='active', 'status-pending' : user.status=='pending', 'status-disabled' : user.status=='disabled'}">{{user.status}}</td>
+
+                                    <td class="td-actions text-middle">
+                                        <a class="manager-inline-link" (click)="resend(user)" [hidden]="user.status=='active'" >
+                                            Resend
+                                        </a><span [hidden]="user.status=='active'" >|</span>
+                                        <a class="manager-inline-link" (click)="disableEnable(user)">
+                                            {{user.status=='disabled' ? 'Enable' : 'Disable'}}
+                                        </a>|
+                                        <a class="manager-inline-link" (click)="delete(user)">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <app-pagination [offset]="localOffset" [size]="localCount" [limit]="localLimit" (pageChange)="getUsersWithPage($event)"></app-pagination>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<modal id="user-insert-modal">
+    <div class="custom-modal" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+        <div class="custom-modal-body">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form #userProfileForm="ngForm" novalidate (ngSubmit)="save(userProfileForm)">
+                        <div class="ent-popup-content">
+
+                            <modalheader-cmp [caption]="addUserCaption" [title]="addUserTitle" [resetMargin]="addUserResetMargin" (closeModal)="closeModal()">
+                            </modalheader-cmp>
+
+                            <div class="card-content">
+
+                                <div class="form-group">
+                                    <label for="role">Role:</label>
+                                    <div class="dropdown">
+                                        <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                            {{selectedRoleDescription}}
+                                            <b class="caret"></b>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li *ngFor="let userRoleMapping of userRoleMappings">
+                                                <a href (click)="$event.preventDefault();selectUserRole(userRoleMapping);">{{userRoleMapping.description}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <small class="text-danger" [hidden]="isRoleValid || isRoleNotToched">
+                                        Role is required.
+                                    </small>
+
+                                </div>
+
+                                <div class="form-group" [hidden]="hidePartner">
+                                    <label for="parterName">Partner:</label>
+                                    <div class="dropdown">
+                                        <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                            {{selectedPartnerName}}
+                                            <b class="caret"></b>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li *ngFor="let partner of partners">
+                                                <a href (click)="$event.preventDefault();selectPartner(partner);">{{partner.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" [hidden]="hideEnterprise">
+                                    <label for="enterpriseName">Enterprise:</label>
+                                    <div class="dropdown">
+                                        <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                            {{selectedEnterpriseName}}
+                                            <b class="caret"></b>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li *ngFor="let enterprise of enterprises">
+                                                <a href (click)="$event.preventDefault();selectEnterprise(enterprise);">{{enterprise.name}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstName">First Name:</label>
+                                    <input #firstName type="text" maxlength="250" class="form-control" id="firstName" name="firstName" [(ngModel)]="currentUser.firstName" (keyup)="validateControl(userProfileForm, 'firstName')">
+                                    <small class="text-danger" [hidden]="isFirstNameValid || !userProfileForm.controls.firstName?.dirty || !userProfileForm.controls.firstName?.touched">
+                                        Error, first name is required.
+                                    </small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lastName">Last Name:</label>
+                                    <input #lastName type="text" maxlength="250" class="form-control" id="lastName" name="lastName" [(ngModel)]="currentUser.lastName" (keyup)="validateControl(userProfileForm, 'lastName')">
+                                    <small class="text-danger" [hidden]="isLastNameValid || !userProfileForm.controls.lastName?.dirty || !userProfileForm.controls.lastName?.touched">
+                                        Error, last name is required.
+                                    </small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="userId">Username ( Email Address ):</label>
+                                    <input #userId type="text" maxlength="250" class="form-control" id="email" name="email" [(ngModel)]="currentUser.email" required (keyup)="validateControl(userProfileForm, 'email')">
+                                    <small class="text-danger" [hidden]="isEmailValid || !userProfileForm.controls.email?.dirty || !userProfileForm.controls.email?.touched">
+                                        Email is empty or not valid.
+                                    </small>
+                                </div>
+
+                                <div class="form-group">
+                                    <small class="text-danger" [hidden]="IsOthersValid">
+                                        {{otherErrorMessage}}
+                                    </small>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default pull-right" [disabled]="!isFormValid">Save</button>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <alert></alert>
+
+                    </form>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="custom-modal-background"></div>
+
+</modal>

@@ -1,0 +1,263 @@
+<div class="main-content" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card ent-page-subtitle individual-panel">
+                    <div class="card-header">
+                        <div style="margin-top: 13px;">
+                            {{ "DeviceEvents.SubTitle" | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card ent-page-subtitle individual-panel text-center" style="background-color:#739F3D;">
+                    <div class="row">
+                        <div class="col-xs-12 control-label" style="margin-top:30px;color:white;">
+                            {{ "DeviceEvents.ActivationDate" | translate}}&nbsp;{{activationDate | date: 'dd/MM/yyyy'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card ent-page-subtitle individual-panel text-center" [ngClass]="{'device-up-to-date' : isUpToDate, 'device-not-up-to-date': !isUpToDate }">
+                    <div>
+                        <div class="row">
+                            <div style="float:right;margin-right:25px;"><i class="ti-help-alt" (click)="lastUpdatedToolTip();"></i></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 control-label" style="margin-top:10px;color:white;">
+                                {{ "DeviceEvents.LastUpdated" | translate}}:&nbsp;{{lastUpdateDate | date: 'dd/MM/yyyy'}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="dashboard-partner">
+            <h4 class="card-title ent-font-bold">{{ "DeviceEvents.DeviceHealth" | translate}}</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card individual-panel" [ngClass]="{'status-description-green' : deviceHealthResult.statusBarColour=='green', 'status-description-red' : deviceHealthResult.statusBarColour=='red', 'status-description-yellow' : deviceHealthResult.statusBarColour=='yellow'}">
+                    <div class="card-content text-center">
+                        <div [hidden]="deviceHealthResult.statusBarColour != null" class="card-content table-responsive table-full-width manager-subscription-no-seat-data">
+                            {{ "DashboardLicence.NoSeatDataAvailable" | translate}}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 control-label" [hidden]="deviceHealthResult.statusBarColour == null">
+                                <div style="float:left;vertical-align:middle;">
+                                    <span class="icon-warning device-health-icon" [hidden]="deviceHealthResult.statusBarColour!='yellow'"></span>
+                                    <span class="icon-x-mark device-health-icon" [hidden]="deviceHealthResult.statusBarColour!='red'"></span>
+                                    <span class="icon-tick device-health-icon" [hidden]="deviceHealthResult.statusBarColour!='green'"></span>
+                                </div>
+                                <div style="float:left; margin-top:10px;">
+                                    <span class="health-description">{{deviceHealthResult.statusDescription}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-3">
+
+                <div class="dashboard-partner">
+                    <h4 class="card-title ent-font-bold"> {{ "DeviceEvents.DeviceInformationSubTitle" | translate}}</h4>
+                </div>
+
+                <div class="card individual-panel text-center">
+                    <div class="card-content">
+                        <div [hidden]="deviceInformationResult.deviceModel != null" class="card-content table-responsive table-full-width manager-subscription-no-seat-data">
+                            {{ "DashboardLicence.NoSeatDataAvailable" | translate}}
+                        </div>
+
+                        <div class="row" *ngIf="deviceInformationResult.deviceModel">
+                            <div style="margin-top:15px;">
+                                <span class="ti-mobile manager-device-type-icon" *ngIf="deviceInformationResult.deviceType.toUpperCase().indexOf('Phone'.toUpperCase()) > -1"></span>
+                                <span class="ti-tablet manager-device-type-icon" *ngIf="deviceInformationResult.deviceType.toUpperCase()=='Tablet'.toUpperCase() || deviceInformationResult.deviceType.toUpperCase()=='iPad'.toUpperCase()"></span>
+                                <span style="margin-left:10px;">
+                                    {{deviceInformationResult.deviceModel}} &nbsp;&nbsp; | &nbsp;&nbsp; {{deviceInformationResult.operatingSystem}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+
+                <div class="dashboard-partner">
+                    <h4 class="card-title ent-font-bold">{{ "DeviceEvents.DeviceSpecsSubTitle" | translate}} </h4>
+                </div>
+
+                <div class="card individual-panel text-center">
+                    <div class="card-content">
+                        <div [hidden]="deviceInformationResult.architecture != null" class="card-content table-responsive table-full-width manager-subscription-no-seat-data">
+                            {{ "DashboardLicence.NoSeatDataAvailable" | translate}}
+                        </div>
+                        <div class="row" *ngIf="deviceInformationResult.architecture">
+                            <div style="display:block; text-align:center; margin-top:15px;">
+                                {{deviceInformationResult.architecture}} &nbsp;&nbsp;
+                                <span *ngIf="deviceInformationResult.memory != ''">|</span>
+                                &nbsp;&nbsp; {{deviceInformationResult.memory}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="dashboard-partner">
+                    <h4 class="card-title ent-font-bold">
+                        {{ "DeviceEvents.FeatureStatusSubTitle" | translate}} &nbsp;&nbsp;<i class="ti-help-alt" (click)="featureStatusToolTip();"></i>
+                    </h4>
+                </div>
+
+                <div class="card individual-panel text-center" [ngClass]="{'web-protect-on' : webProtectStatus==1, 'web-protect-off' : webProtectStatus==0}">
+                    <div class="card-content">
+                        <div [hidden]="webProtectStatus != null" class="card-content table-responsive table-full-width manager-subscription-no-seat-data">
+                            {{ "DashboardLicence.NoSeatDataAvailable" | translate}}
+                        </div>
+                        <div class="row" *ngIf="webProtectStatus != null">
+                            <div style="text-align:center;">
+                                {{ "DeviceEvents.WebProtect" | translate}} &nbsp;&nbsp;
+                                <span class="icon-off" [hidden]="webProtectStatus!=0" style="font-size:2em;"></span>
+                                <span class="icon-on" [hidden]="webProtectStatus!=1" style="font-size:2em;"></span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="dashboard-partner">
+            <h4 class="card-title ent-font-bold">{{ "DeviceEvents.HistorySubTitle" | translate}}</h4>
+        </div>
+
+
+        <div class="card">
+            <div class="card-content">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                            <li class="active"><a href="#scanSummary" data-toggle="tab">{{ "DeviceEvents.ScanSummary.SubTitle" | translate}}</a></li>
+                            <li><a href="#secureAppHistory" data-toggle="tab">{{ "DeviceEvents.HistorySecureApps" | translate}}</a></li>
+                            <li><a href="#malwareEvents" data-toggle="tab">{{ "DeviceEvents.MalwareEvents.SubTitle" | translate}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="my-tab-content" class="tab-content text-center">
+                    <div class="tab-pane active" id="scanSummary">
+
+                        <div [hidden]="deviceScanSummaryResults.length > 0" class="card-content table-responsive table-full-width manager-subscription-no-seat-data">
+                            {{ "DashboardLicence.NoSeatDataAvailable" | translate}}
+                        </div>
+
+                        <div class="card-content table-responsive table-full-width" [hidden]="deviceScanSummaryResults.length == 0">
+                            <table class="table manager-table-list manager-table-wrap">
+                                <thead>
+                                    <tr>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.ScanSummary.AndroidType" | translate}}</th>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.ScanSummary.AndroidDate" | translate}}</th>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.ScanSummary.Duration" | translate}}</th>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.ScanSummary.ScannedApps" | translate}}</th>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.ScanSummary.MaliciousApps" | translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let deviceScanSummaryResult of deviceScanSummaryResults">
+                                        <td>{{deviceScanSummaryResult.scanType}}</td>
+                                        <td>{{deviceScanSummaryResult.scanStartDateTime | date:'dd/MM/yyyy'}}</td>
+                                        <td>{{deviceScanSummaryResult.scanDuration}}</td>
+                                        <td>{{deviceScanSummaryResult.appScanCount}}</td>
+                                        <td>{{deviceScanSummaryResult.maliciousAppCount}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="secureAppHistory">
+                        <div [hidden]="secureAppsEvents.length > 0" class="card-content table-responsive table-full-width manager-subscription-no-seat-data">
+                            {{ "DashboardLicence.NoSeatDataAvailable" | translate}}
+                        </div>
+
+                        <div class="card-content table-responsive table-full-width" [hidden]="secureAppsEvents.length == 0">
+                            <table class="table manager-table-list manager-table-wrap">
+                                <thead>
+                                    <tr>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.SecureApps.Status" | translate}}</th>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.SecureApps.Date" | translate}}</th>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.SecureApps.AppName" | translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let secureAppsEvent of secureAppsEvents">
+                                        <td>{{secureAppsEvent.status == "1" ? "Added" : "Removed" }}</td>
+                                        <td>{{secureAppsEvent?.eventDate | date: 'dd/MM/yyyy hh:mm'}}</td>
+                                        <td>{{secureAppsEvent.appName}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="malwareEvents">
+                        <div [hidden]="deviceMalwareEvents.length > 0" class="card-content table-responsive table-full-width manager-subscription-no-seat-data">
+                            {{ "DashboardLicence.NoSeatDataAvailable" | translate}}
+                        </div>
+
+                        <div class="card-content table-responsive table-full-width" [hidden]="deviceMalwareEvents.length == 0">
+                            <table class="table manager-table-list manager-table-wrap">
+                                <thead>
+                                    <tr>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.MalwareEvents.Action" | translate}}</th>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.MalwareEvents.Date" | translate}}</th>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.MalwareEvents.Type" | translate}}</th>
+                                        <th class="ent-font-bold">{{ "DeviceEvents.MalwareEvents.InfectedObject" | translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let deviceMalwareEvent of deviceMalwareEvents">
+                                        <td>
+                                            <span class="icon-warning" style="color:#F8A055; font-size:large;"></span>
+                                        </td>
+                                        <td>{{deviceMalwareEvent?.eventDate | date: 'dd/MM/yyyy hh:mm'}}</td>
+                                        <td>{{deviceMalwareEvent.malwareNameType}}</td>
+                                        <td>{{deviceMalwareEvent.infectedItem}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

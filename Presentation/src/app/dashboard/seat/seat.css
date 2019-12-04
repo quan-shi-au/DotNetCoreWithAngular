@@ -1,0 +1,13 @@
+﻿.manager-subscription-detail {
+    height: 260px;
+}
+
+.manager-subscription-no-seat-data {
+    margin-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.manager-device-type-icon {
+    font-size: x-large;
+}

@@ -1,0 +1,394 @@
+2018-01-23 15:00:44.275 +11:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\DevAdmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-01-23 15:00:47.014 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://localhost:55904/  
+2018-01-23 15:00:48.856 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) with arguments ((null)) - ModelState is Valid
+2018-01-23 15:00:51.406 +11:00 [Information] ent.manager.WebApi.Controllers.HomeController: Executed Get action
+2018-01-23 15:00:58.130 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'managerDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: None
+2018-01-23 15:01:04.989 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (254ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CoreURL`, `s`.`Name`, `s`.`RegURL`, `s`.`wId`
+FROM `LicenceEnvironment` AS `s`
+ORDER BY `s`.`Id`
+2018-01-23 15:01:08.789 +11:00 [Information] Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor: Executing ViewResult, running view at path /Views/Home/IndexAsync.cshtml.
+2018-01-23 15:01:10.193 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) in 21355.2111ms
+2018-01-23 15:01:11.142 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 24129.0946ms 200 text/html; charset=utf-8
+2018-01-23 15:22:51.000 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://localhost:55904/  
+2018-01-23 16:31:50.024 +11:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\DevAdmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-01-23 16:31:58.004 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://localhost:55904/  
+2018-01-23 16:32:00.872 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) with arguments ((null)) - ModelState is Valid
+2018-01-23 16:32:20.143 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'managerDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: None
+2018-01-23 16:32:26.195 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (251ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CoreURL`, `s`.`Name`, `s`.`RegURL`, `s`.`wId`
+FROM `LicenceEnvironment` AS `s`
+ORDER BY `s`.`Id`
+2018-01-23 16:32:29.589 +11:00 [Information] Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor: Executing ViewResult, running view at path /Views/Home/IndexAsync.cshtml.
+2018-01-23 16:32:30.464 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) in 29625.3452ms
+2018-01-23 16:32:30.500 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 32497.0695ms 200 text/html; charset=utf-8
+2018-01-23 16:33:33.669 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 POST http://localhost:55904/api/v1/user/add application/json 130
+2018-01-23 16:33:33.960 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: Failed to validate the token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2FtLnF1YW5Ad29udG9rLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwibmJmIjoiMTUxNjU4MzcyNSIsImV4cCI6IjE1MTY2NzAxMjUifQ.IqKr_tf91mUKg12QZcFta-9vFsujRpiHyTYikBKOMFU.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '01/23/2018 01:15:25'
+Current time: '01/23/2018 05:33:33'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwt, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__6.MoveNext()
+2018-01-23 16:33:34.324 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: Jwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '01/23/2018 01:15:25'
+Current time: '01/23/2018 05:33:33'.
+2018-01-23 16:33:34.419 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: Jwt was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '01/23/2018 01:15:25'
+Current time: '01/23/2018 05:33:33'.
+2018-01-23 16:33:34.432 +11:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization failed for user: (null).
+2018-01-23 16:33:34.436 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2018-01-23 16:33:34.440 +11:00 [Information] Microsoft.AspNetCore.Mvc.ChallengeResult: Executing ChallengeResult with authentication schemes (Jwt).
+2018-01-23 16:33:34.449 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Jwt was challenged.
+2018-01-23 16:33:34.452 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.UserApiController.Add (ent.manager.WebApi) in 39.7264ms
+2018-01-23 16:33:34.504 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 835.4247ms 401 
+2018-01-23 16:35:07.557 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 POST http://localhost:55904/api/v1/token/get application/json 44
+2018-01-23 16:35:07.655 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.TokenApiController.Get (ent.manager.WebApi) with arguments ({
+  "un": "ec1@timparker.com.au",
+  "pw": "Abc@123"
+}) - ModelState is Valid
+2018-01-23 16:35:07.764 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'IdentityDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: MigrationsAssembly=ent.manager.WebApi 
+2018-01-23 16:35:08.637 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (281ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`AccessFailedCount`, `u`.`ConcurrencyStamp`, `u`.`Email`, `u`.`EmailConfirmed`, `u`.`LockoutEnabled`, `u`.`LockoutEnd`, `u`.`NormalizedEmail`, `u`.`NormalizedUserName`, `u`.`PasswordHash`, `u`.`PhoneNumber`, `u`.`PhoneNumberConfirmed`, `u`.`SecurityStamp`, `u`.`TwoFactorEnabled`, `u`.`UserName`
+FROM `AspNetUsers` AS `u`
+WHERE `u`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 1
+2018-01-23 16:35:09.511 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (250ms) [Parameters=[@__user_Id_0='?' (Size = 767)], CommandType='Text', CommandTimeout='30']
+SELECT `uc`.`Id`, `uc`.`ClaimType`, `uc`.`ClaimValue`, `uc`.`UserId`
+FROM `AspNetUserClaims` AS `uc`
+WHERE `uc`.`UserId` = @__user_Id_0
+2018-01-23 16:35:10.308 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (246ms) [Parameters=[@__userId_0='?' (Size = 767)], CommandType='Text', CommandTimeout='30']
+SELECT `role`.`Name`
+FROM `AspNetUserRoles` AS `userRole`
+INNER JOIN `AspNetRoles` AS `role` ON `userRole`.`RoleId` = `role`.`Id`
+WHERE `userRole`.`UserId` = @__userId_0
+2018-01-23 16:35:11.057 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (246ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `AspNetRoles` AS `r`
+WHERE `r`.`NormalizedName` = @__normalizedName_0
+LIMIT 1
+2018-01-23 16:35:11.813 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (246ms) [Parameters=[@__role_Id_0='?' (Size = 767)], CommandType='Text', CommandTimeout='30']
+SELECT `rc`.`ClaimType`, `rc`.`ClaimValue`
+FROM `AspNetRoleClaims` AS `rc`
+WHERE `rc`.`RoleId` = @__role_Id_0
+2018-01-23 16:35:11.864 +11:00 [Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler: AuthenticationScheme: Identity.Application signed in.
+2018-01-23 16:35:12.605 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (247ms) [Parameters=[@__userId_0='?' (Size = 767)], CommandType='Text', CommandTimeout='30']
+SELECT `role`.`Name`
+FROM `AspNetUserRoles` AS `userRole`
+INNER JOIN `AspNetRoles` AS `role` ON `userRole`.`RoleId` = `role`.`Id`
+WHERE `userRole`.`UserId` = @__userId_0
+2018-01-23 16:35:12.711 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor: Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2018-01-23 16:35:12.714 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.TokenApiController.Get (ent.manager.WebApi) in 5151.0622ms
+2018-01-23 16:35:12.717 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 5160.0646ms 200 text/plain; charset=utf-8
+2018-01-23 16:35:30.955 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 POST http://localhost:55904/api/v1/token/get application/json 43
+2018-01-23 16:35:30.971 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.TokenApiController.Get (ent.manager.WebApi) with arguments ({
+  "un": "sam.quan@ent.com",
+  "pw": "Abc@123"
+}) - ModelState is Valid
+2018-01-23 16:35:30.974 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'IdentityDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: MigrationsAssembly=ent.manager.WebApi 
+2018-01-23 16:35:31.714 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (247ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT `u`.`Id`, `u`.`AccessFailedCount`, `u`.`ConcurrencyStamp`, `u`.`Email`, `u`.`EmailConfirmed`, `u`.`LockoutEnabled`, `u`.`LockoutEnd`, `u`.`NormalizedEmail`, `u`.`NormalizedUserName`, `u`.`PasswordHash`, `u`.`PhoneNumber`, `u`.`PhoneNumberConfirmed`, `u`.`SecurityStamp`, `u`.`TwoFactorEnabled`, `u`.`UserName`
+FROM `AspNetUsers` AS `u`
+WHERE `u`.`NormalizedEmail` = @__normalizedEmail_0
+LIMIT 1
+2018-01-23 16:35:32.470 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (245ms) [Parameters=[@__user_Id_0='?' (Size = 767)], CommandType='Text', CommandTimeout='30']
+SELECT `uc`.`Id`, `uc`.`ClaimType`, `uc`.`ClaimValue`, `uc`.`UserId`
+FROM `AspNetUserClaims` AS `uc`
+WHERE `uc`.`UserId` = @__user_Id_0
+2018-01-23 16:35:33.209 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (245ms) [Parameters=[@__userId_0='?' (Size = 767)], CommandType='Text', CommandTimeout='30']
+SELECT `role`.`Name`
+FROM `AspNetUserRoles` AS `userRole`
+INNER JOIN `AspNetRoles` AS `role` ON `userRole`.`RoleId` = `role`.`Id`
+WHERE `userRole`.`UserId` = @__userId_0
+2018-01-23 16:35:33.948 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (245ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT `r`.`Id`, `r`.`ConcurrencyStamp`, `r`.`Name`, `r`.`NormalizedName`
+FROM `AspNetRoles` AS `r`
+WHERE `r`.`NormalizedName` = @__normalizedName_0
+LIMIT 1
+2018-01-23 16:35:34.687 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (245ms) [Parameters=[@__role_Id_0='?' (Size = 767)], CommandType='Text', CommandTimeout='30']
+SELECT `rc`.`ClaimType`, `rc`.`ClaimValue`
+FROM `AspNetRoleClaims` AS `rc`
+WHERE `rc`.`RoleId` = @__role_Id_0
+2018-01-23 16:35:34.690 +11:00 [Information] Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler: AuthenticationScheme: Identity.Application signed in.
+2018-01-23 16:35:35.429 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (246ms) [Parameters=[@__userId_0='?' (Size = 767)], CommandType='Text', CommandTimeout='30']
+SELECT `role`.`Name`
+FROM `AspNetUserRoles` AS `userRole`
+INNER JOIN `AspNetRoles` AS `role` ON `userRole`.`RoleId` = `role`.`Id`
+WHERE `userRole`.`UserId` = @__userId_0
+2018-01-23 16:35:35.433 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor: Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2018-01-23 16:35:35.435 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.TokenApiController.Get (ent.manager.WebApi) in 4478.1832ms
+2018-01-23 16:35:35.439 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 4483.9679ms 200 text/plain; charset=utf-8
+2018-01-23 16:36:10.268 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 POST http://localhost:55904/api/v1/ec/add application/json 52
+2018-01-23 16:36:10.278 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: Successfully validated the token.
+2018-01-23 16:36:10.282 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Jwt was successfully authenticated.
+2018-01-23 16:36:10.286 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Jwt was successfully authenticated.
+2018-01-23 16:36:10.289 +11:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization was successful for user: sam.quan@ent.com.
+2018-01-23 16:36:10.300 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add (ent.manager.WebApi) with arguments ({
+  "name": "enterprise5",
+  "location": "sydney",
+  "pid": 114
+}) - ModelState is Valid
+2018-01-23 16:36:10.314 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'managerDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: None
+2018-01-23 16:36:11.748 +11:00 [Error] Microsoft.EntityFrameworkCore.Database.Command: Failed executing DbCommand (290ms) [Parameters=[@p0='?', @p1='?' (Size = 6), @p2='?', @p3='?' (Size = 11), @p4='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO `EnterpriseClient` (`CreationTime`, `Location`, `ModificationTime`, `Name`, `PartnerId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `EnterpriseClient`
+WHERE ROW_COUNT() = 1
+ AND `Id`=LAST_INSERT_ID();
+MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry 'enterprise5' for key 'Name_UNIQUE'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+2018-01-23 16:36:12.055 +11:00 [Error] Microsoft.EntityFrameworkCore.Update: An exception occurred in the database while saving changes for context type 'ent.manager.Data.Context.managerDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Duplicate entry 'enterprise5' for key 'Name_UNIQUE'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.Execute[TState,TResult](IExecutionStrategy strategy, TState state, Func`2 operation)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Duplicate entry 'enterprise5' for key 'Name_UNIQUE'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.Execute[TState,TResult](IExecutionStrategy strategy, TState state, Func`2 operation)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2018-01-23 16:36:12.520 +11:00 [Error] ent.manager.WebApi.Controllers.EnterpriseClientApiController: Loc: ec_addMessage: Stack Trace   at ent.manager.Data.Repositories.EfRepository`1.Insert(T entity) in C:\Users\DevAdmin\Source\Repos\manager\ent.manager.Data\Repositories\EfRepository.cs:line 48
+   at ent.manager.Services.EnterpriseClient.EnterpriseClientService.Add(EnterpriseClient EnterpriseClient) in C:\Users\DevAdmin\Source\Repos\manager\ent.manager.Services\EnterpriseClient\EnterpriseClientService.cs:line 42
+   at ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add(Object value) in C:\Users\DevAdmin\Source\Repos\manager\ent.manager.WebApi\Controllers\EnterpriseClientApiController.cs:line 196
+2018-01-23 16:36:13.268 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (246ms) [Parameters=[@__name_0='?' (Size = 11)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CreationTime`, `s`.`Location`, `s`.`ModificationTime`, `s`.`Name`, `s`.`PartnerId`
+FROM `EnterpriseClient` AS `s`
+WHERE `s`.`Name` = @__name_0
+LIMIT 1
+2018-01-23 16:36:13.278 +11:00 [Information] Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor: Executing JsonResult, writing value { c = 02, d =  }.
+2018-01-23 16:36:13.308 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add (ent.manager.WebApi) in 3022.7778ms
+2018-01-23 16:36:13.310 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 3041.9334ms 200 application/json; charset=utf-8
+2018-01-23 16:36:17.069 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 POST http://localhost:55904/api/v1/ec/add application/json 55
+2018-01-23 16:36:17.071 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: Successfully validated the token.
+2018-01-23 16:36:17.073 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Jwt was successfully authenticated.
+2018-01-23 16:36:17.075 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Jwt was successfully authenticated.
+2018-01-23 16:36:17.077 +11:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization was successful for user: sam.quan@ent.com.
+2018-01-23 16:36:17.080 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add (ent.manager.WebApi) with arguments ({
+  "name": "enterprise5",
+  "location": "sydney",
+  "pid": 112121
+}) - ModelState is Valid
+2018-01-23 16:36:17.082 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'managerDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: None
+2018-01-23 16:36:18.317 +11:00 [Error] Microsoft.EntityFrameworkCore.Database.Command: Failed executing DbCommand (246ms) [Parameters=[@p0='?', @p1='?' (Size = 6), @p2='?', @p3='?' (Size = 11), @p4='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO `EnterpriseClient` (`CreationTime`, `Location`, `ModificationTime`, `Name`, `PartnerId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `EnterpriseClient`
+WHERE ROW_COUNT() = 1
+ AND `Id`=LAST_INSERT_ID();
+MySql.Data.MySqlClient.MySqlException (0x80004005): Duplicate entry 'enterprise5' for key 'Name_UNIQUE'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+2018-01-23 16:36:18.582 +11:00 [Error] Microsoft.EntityFrameworkCore.Update: An exception occurred in the database while saving changes for context type 'ent.manager.Data.Context.managerDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Duplicate entry 'enterprise5' for key 'Name_UNIQUE'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.Execute[TState,TResult](IExecutionStrategy strategy, TState state, Func`2 operation)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Duplicate entry 'enterprise5' for key 'Name_UNIQUE'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.Execute[TState,TResult](IExecutionStrategy strategy, TState state, Func`2 operation)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2018-01-23 16:36:18.707 +11:00 [Error] ent.manager.WebApi.Controllers.EnterpriseClientApiController: Loc: ec_addMessage: Stack Trace   at ent.manager.Data.Repositories.EfRepository`1.Insert(T entity) in C:\Users\DevAdmin\Source\Repos\manager\ent.manager.Data\Repositories\EfRepository.cs:line 48
+   at ent.manager.Services.EnterpriseClient.EnterpriseClientService.Add(EnterpriseClient EnterpriseClient) in C:\Users\DevAdmin\Source\Repos\manager\ent.manager.Services\EnterpriseClient\EnterpriseClientService.cs:line 42
+   at ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add(Object value) in C:\Users\DevAdmin\Source\Repos\manager\ent.manager.WebApi\Controllers\EnterpriseClientApiController.cs:line 196
+2018-01-23 16:36:19.448 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (246ms) [Parameters=[@__name_0='?' (Size = 11)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CreationTime`, `s`.`Location`, `s`.`ModificationTime`, `s`.`Name`, `s`.`PartnerId`
+FROM `EnterpriseClient` AS `s`
+WHERE `s`.`Name` = @__name_0
+LIMIT 1
+2018-01-23 16:36:19.450 +11:00 [Information] Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor: Executing JsonResult, writing value { c = 02, d =  }.
+2018-01-23 16:36:19.452 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add (ent.manager.WebApi) in 2376.961ms
+2018-01-23 16:36:19.454 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 2385.232ms 200 application/json; charset=utf-8
+2018-01-23 16:36:33.467 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 POST http://localhost:55904/api/v1/ec/add application/json 56
+2018-01-23 16:36:33.469 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: Successfully validated the token.
+2018-01-23 16:36:33.472 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Jwt was successfully authenticated.
+2018-01-23 16:36:33.474 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Jwt was successfully authenticated.
+2018-01-23 16:36:33.476 +11:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization was successful for user: sam.quan@ent.com.
+2018-01-23 16:36:33.479 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add (ent.manager.WebApi) with arguments ({
+  "name": "enterprise51",
+  "location": "sydney",
+  "pid": 112121
+}) - ModelState is Valid
+2018-01-23 16:36:33.482 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'managerDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: None
+2018-01-23 16:36:34.715 +11:00 [Error] Microsoft.EntityFrameworkCore.Database.Command: Failed executing DbCommand (247ms) [Parameters=[@p0='?', @p1='?' (Size = 6), @p2='?', @p3='?' (Size = 12), @p4='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO `EnterpriseClient` (`CreationTime`, `Location`, `ModificationTime`, `Name`, `PartnerId`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `Id`
+FROM `EnterpriseClient`
+WHERE ROW_COUNT() = 1
+ AND `Id`=LAST_INSERT_ID();
+MySql.Data.MySqlClient.MySqlException (0x80004005): Cannot add or update a child row: a foreign key constraint fails (`manager_dev`.`EnterpriseClient`, CONSTRAINT `FK_EC_PartnerId1` FOREIGN KEY (`PartnerId`) REFERENCES `Partner` (`Id`) ON DELETE CASCADE ON UPDATE NO ACTION)
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+2018-01-23 16:36:34.992 +11:00 [Error] Microsoft.EntityFrameworkCore.Update: An exception occurred in the database while saving changes for context type 'ent.manager.Data.Context.managerDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Cannot add or update a child row: a foreign key constraint fails (`manager_dev`.`EnterpriseClient`, CONSTRAINT `FK_EC_PartnerId1` FOREIGN KEY (`PartnerId`) REFERENCES `Partner` (`Id`) ON DELETE CASCADE ON UPDATE NO ACTION)
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.Execute[TState,TResult](IExecutionStrategy strategy, TState state, Func`2 operation)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> MySql.Data.MySqlClient.MySqlException: Cannot add or update a child row: a foreign key constraint fails (`manager_dev`.`EnterpriseClient`, CONSTRAINT `FK_EC_PartnerId1` FOREIGN KEY (`PartnerId`) REFERENCES `Partner` (`Id`) ON DELETE CASCADE ON UPDATE NO ACTION)
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.Execute[TState,TResult](IExecutionStrategy strategy, TState state, Func`2 operation)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IReadOnlyList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2018-01-23 16:36:35.140 +11:00 [Error] ent.manager.WebApi.Controllers.EnterpriseClientApiController: Loc: ec_addMessage: Stack Trace   at ent.manager.Data.Repositories.EfRepository`1.Insert(T entity) in C:\Users\DevAdmin\Source\Repos\manager\ent.manager.Data\Repositories\EfRepository.cs:line 48
+   at ent.manager.Services.EnterpriseClient.EnterpriseClientService.Add(EnterpriseClient EnterpriseClient) in C:\Users\DevAdmin\Source\Repos\manager\ent.manager.Services\EnterpriseClient\EnterpriseClientService.cs:line 42
+   at ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add(Object value) in C:\Users\DevAdmin\Source\Repos\manager\ent.manager.WebApi\Controllers\EnterpriseClientApiController.cs:line 196
+2018-01-23 16:36:35.886 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (247ms) [Parameters=[@__name_0='?' (Size = 12)], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CreationTime`, `s`.`Location`, `s`.`ModificationTime`, `s`.`Name`, `s`.`PartnerId`
+FROM `EnterpriseClient` AS `s`
+WHERE `s`.`Name` = @__name_0
+LIMIT 1
+2018-01-23 16:36:35.891 +11:00 [Information] Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor: Executing JsonResult, writing value { c = 00, d =  }.
+2018-01-23 16:36:35.897 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add (ent.manager.WebApi) in 2422.9248ms
+2018-01-23 16:36:35.903 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 2436.423ms 200 application/json; charset=utf-8
+2018-01-23 16:40:34.884 +11:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\DevAdmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-01-23 16:40:48.487 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://localhost:55904/  
+2018-01-23 16:40:58.053 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) with arguments ((null)) - ModelState is Valid
+2018-01-23 16:40:59.028 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'managerDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: None
+2018-01-23 16:41:05.606 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (251ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CoreURL`, `s`.`Name`, `s`.`RegURL`, `s`.`wId`
+FROM `LicenceEnvironment` AS `s`
+ORDER BY `s`.`Id`
+2018-01-23 16:41:35.461 +11:00 [Information] Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor: Executing ViewResult, running view at path /Views/Home/IndexAsync.cshtml.
+2018-01-23 16:41:42.669 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) in 44627.1314ms
+2018-01-23 16:41:46.065 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 57578.0164ms 200 text/html; charset=utf-8
+2018-01-23 16:41:51.829 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 POST http://localhost:55904/api/v1/ec/add application/json 56
+2018-01-23 16:41:53.413 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: Successfully validated the token.
+2018-01-23 16:41:58.132 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Jwt was successfully authenticated.
+2018-01-23 16:42:01.155 +11:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Jwt was successfully authenticated.
+2018-01-23 16:42:02.732 +11:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization was successful for user: sam.quan@ent.com.
+2018-01-23 16:42:03.980 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.EnterpriseClientApiController.Add (ent.manager.WebApi) with arguments ({
+  "name": "enterprise51",
+  "location": "sydney",
+  "pid": 112121
+}) - ModelState is Valid
+2018-01-23 16:42:05.217 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'managerDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: None
+2018-01-23 16:44:46.012 +11:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\DevAdmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-01-23 16:44:46.553 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://localhost:55904/  
+2018-01-23 16:44:46.858 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) with arguments ((null)) - ModelState is Valid
+2018-01-23 16:44:47.057 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'managerDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: None
+2018-01-23 16:44:52.512 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (251ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CoreURL`, `s`.`Name`, `s`.`RegURL`, `s`.`wId`
+FROM `LicenceEnvironment` AS `s`
+ORDER BY `s`.`Id`
+2018-01-23 16:44:54.323 +11:00 [Information] Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor: Executing ViewResult, running view at path /Views/Home/IndexAsync.cshtml.
+2018-01-23 16:44:54.943 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) in 8095.3036ms
+2018-01-23 16:44:54.952 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 8400.0117ms 200 text/html; charset=utf-8
+2018-01-23 17:21:19.165 +11:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\DevAdmin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-01-23 17:21:32.017 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request starting HTTP/1.1 GET http://localhost:55904/  
+2018-01-23 17:21:33.989 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executing action method ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) with arguments ((null)) - ModelState is Valid
+2018-01-23 17:21:35.022 +11:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 2.0.1-rtm-125 initialized 'managerDbContext' using provider 'MySql.Data.EntityFrameworkCore' with options: None
+2018-01-23 17:21:41.428 +11:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (254ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`Id`, `s`.`CoreURL`, `s`.`Name`, `s`.`RegURL`, `s`.`wId`
+FROM `LicenceEnvironment` AS `s`
+ORDER BY `s`.`Id`
+2018-01-23 17:21:49.152 +11:00 [Information] Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor: Executing ViewResult, running view at path /Views/Home/IndexAsync.cshtml.
+2018-01-23 17:21:50.185 +11:00 [Information] Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker: Executed action ent.manager.WebApi.Controllers.HomeController.IndexAsync (ent.manager.WebApi) in 16205.1683ms
+2018-01-23 17:21:50.222 +11:00 [Information] Microsoft.AspNetCore.Hosting.Internal.WebHost: Request finished in 18210.7874ms 200 text/html; charset=utf-8

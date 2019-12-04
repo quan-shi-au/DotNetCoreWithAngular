@@ -1,0 +1,521 @@
+﻿<div class="main-content" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card ent-page-subtitle">
+                    <div class="card-header">
+                        <div>
+                            View / Add Subscriptions
+                            <div class="ent-page-subtitle-button">
+                                <button type="button" class="btn btn-default" (click)="addSubscription(subscriptionForm);">Add Subscription</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="dashboard-partner">
+                    <h4 class="card-title ent-font-bold">List</h4>
+                    <h5 class="card-title">Subscription List</h5>
+                </div>
+
+                <div class="card">
+                    <div class="card-content table-responsive table-full-width">
+                        <table class="table manager-table-list manager-table-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="ent-font-bold">{{ headerRow[0] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[1] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[2] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[3] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[4] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[5] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[6] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[7] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[8] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[9] }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let subscription of subscriptions">
+                                    <td class="manager-table-wrap">{{subscription.partner.name}}</td>
+                                    <td class="manager-table-wrap">{{subscription.enterprise.name}}</td>
+                                    <td>{{subscription.name}}</td>
+                                    <td>{{subscription.productName}}</td>
+                                    <td>{{subscription.creationTime | date : 'dd/MM/yyyy'}}</td>
+                                    <td>{{subscription.seatCount}}</td>
+                                    <td [ngClass]="{'status-active' : subscription.status=='Active', 'status-cancelled' : subscription.status=='Cancelled'}">{{subscription.status}}</td>
+                                    <td class="td-actions text-middle">
+                                        <button type="button" class="btn" [disabled]="subscription.status!='Active'" (click)="viewLicence(subscription.id);">View</button>
+                                    </td>
+                                    <td class="td-actions text-middle">
+                                        <button type="button" class="btn" [disabled]="subscription.status!='Active'" (click)="viewSeatDetail(subscription.id, subscription.brandId, subscription.licenceKey, subscription.licencingEnvironment);">Device Details</button>
+                                    </td>
+                                    <td class="td-actions text-middle">
+                                        <a class="manager-inline-link" [hidden]="subscription.status!='Active'" (click)="increaseSeatCountLink(subscription, increaseSeatcountForm)">
+                                            Increase Seat Count
+                                        </a>
+                                        <span [hidden]="subscription.status=='Active'" class="manager-disabled">
+                                            Increase Seat Count
+                                        </span>
+                                        |
+                                        <a class="manager-inline-link" [hidden]="subscription.status!='Active'" (click)="cancelSubscription(subscription)">
+                                            Cancel
+                                        </a>
+                                        <span [hidden]="subscription.status=='Active'" class="manager-disabled">
+                                            Cancel
+                                        </span>
+                                        |
+                                        <a class="manager-inline-link" [hidden]="subscription.status!='Active'" (click)="sendInstructions(subscription)">
+                                            Send Instructions
+                                        </a>
+                                        <span [hidden]="subscription.status=='Active'" class="manager-disabled">
+                                            Send Instructions
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <app-pagination [offset]="localOffset" [size]="localCount" [limit]="localLimit" (pageChange)="getSubscriptionsWithPage($event)"></app-pagination>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<modal id="increase-seatcount-modal">
+    <div class="custom-modal" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+        <div class="custom-modal-body">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+
+                        <form #increaseSeatcountForm="ngForm" novalidate (ngSubmit)="increaseSeatcount(increaseSeatcountForm)">
+                            <div class="ent-popup-content">
+
+                                <modalheader-cmp [caption]="increaseSeatcountCaption" [title]="increaseSeatcountTitle" [resetMargin]="increaseSeatcountResetMargin" (closeModal)="closeIncreaseSeatcountModal()">
+                                </modalheader-cmp>
+
+                                <div class="card-content">
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Subscription
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <input type="text" readonly maxlength="250" class="form-control" id="iscSubscriptionName" name="iscSubscriptionName" [(ngModel)]="selectedSubscription.name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Current Seat Count
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <input type="text" readonly maxlength="250" class="form-control" id="iscCurrentSeatcount" name="iscCurrentSeatcount" [(ngModel)]="selectedSubscription.seatCount">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                New Seat Count
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <input type="text" maxlength="250" class="form-control" id="iscNewSeatcount" name="iscNewSeatcount" [(ngModel)]="newSeatCount" (keyup)="validateNewSeatcount(increaseSeatcountForm)">
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div class="col-sm-9">
+
+                                                <small class="text-danger" [hidden]="isIscNewSeatcountValid || !increaseSeatcountForm.controls.iscNewSeatcount?.dirty || !increaseSeatcountForm.controls.iscNewSeatcount?.touched">
+                                                    New seat count must be greater than the current one.
+                                                </small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <button type="submit" class="btn btn-default btn-fill pull-right" [disabled]="!isIncreaseSeatcountFormValid">Save</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <alert></alert>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="custom-modal-background"></div>
+
+</modal>
+
+<modal id="subscription-insert-modal">
+    <div class="custom-modal" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+        <div class="custom-modal-body">
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+
+                        <form #subscriptionForm="ngForm" class="form-horizontal" novalidate (ngSubmit)="submitSubscription(subscriptionForm, subscriptionForm.value, subscriptionForm.valid)">
+
+                            <modalheader-cmp [caption]="addSubscriptionCaption" [title]="addSubscriptionTitle" [resetMargin]="addSubscriptionResetMargin" (closeModal)="closeModal()">
+                            </modalheader-cmp>
+
+                            <div class="card-content">
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Partner
+                                            </label>
+                                            <div class="col-sm-8">
+
+                                                <div class="dropdown">
+                                                    <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                                        {{selectedPartnerName}}
+                                                        <b class="caret"></b>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li *ngFor="let partner of partners">
+                                                            <a href (click)="$event.preventDefault();selectPartner(partner);">{{partner.name}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+
+                                                <small class="text-danger" [hidden]="isPartnerValid || isPartnerNotToched">
+                                                    Partner is required.
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Enterprise
+                                            </label>
+                                            <div class="col-sm-8">
+                                                <div class="dropdown">
+                                                    <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                                        {{selectedEnterpriseName}}
+                                                        <b class="caret"></b>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li *ngFor="let enterprise of enterprises">
+                                                            <a href (click)="$event.preventDefault();selectEnterprise(enterprise);">{{enterprise.name}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+
+                                                <small class="text-danger" [hidden]="isEnterpriseValid || isEnterpriseNotToched">
+                                                    Enterprise is required.
+                                                </small>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Product
+                                            </label>
+
+                                            <div class="col-sm-8">
+                                                <div class="dropdown">
+                                                    <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                                        {{selectedProduct.name}}
+                                                        <b class="caret"></b>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li *ngFor="let product of products">
+                                                            <a href (click)="$event.preventDefault();selectProduct(product);">{{product.name}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+
+                                                <small class="text-danger" [hidden]="isProductValid || isProductNotToched">
+                                                    Product is required.
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Licencing Environment
+                                            </label>
+                                            <div class="col-sm-8">
+                                                <div class="dropdown">
+                                                    <button href class="btn btn-block dropdown-toggle" data-toggle="dropdown" (click)="$event.preventDefault();">
+                                                        {{selectedLicencingEnvironment.name}}
+                                                        <b class="caret"></b>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li *ngFor="let licencingEnvironment of licencingEnvironments">
+                                                            <a href (click)="$event.preventDefault();selectLicencingEnvironment(licencingEnvironment);">{{licencingEnvironment.name}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+
+                                                <small class="text-danger" [hidden]="isLicencingEnvironmentValid || isLicencingEnvironmentNotToched">
+                                                    Licencing Environment is required.
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Brand ID
+                                            </label>
+                                            <div class="col-sm-8">
+                                                <input type="text" maxlength="250" class="form-control" id="brandId" name="brandId" [ngModel]="twoWayModel.brandId" (keyup)="validateControl(subscriptionForm, 'brandId')">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+                                                <small class="text-danger" [hidden]="isBrandIdValid || !subscriptionForm.controls.brandId?.dirty || !subscriptionForm.controls.brandId?.touched">
+                                                    Brand ID is required.
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Campaign
+                                            </label>
+                                            <div class="col-sm-8">
+                                                <input type="text" maxlength="250" class="form-control" id="campaign" name="campaign" [(ngModel)]="twoWayModel.campaign" (keyup)="validateControl(subscriptionForm, 'campaign')">
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+
+                                                <small class="text-danger" [hidden]="isCampaignValid || !subscriptionForm.controls.campaign?.dirty || !subscriptionForm.controls.campaign?.touched">
+                                                    Campaign is required.
+                                                </small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Seat Count
+                                            </label>
+                                            <div class="col-sm-8">
+                                                <input type="text" maxlength="250" class="form-control" id="seatCount" name="seatCount" [ngModel]="twoWayModel.seatCount" (keyup)="validateControl(subscriptionForm, 'seatCount')" autocomplete="off">
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+
+
+                                                <small class="text-danger" [hidden]="isSeatCountValid || !subscriptionForm.controls.seatCount?.dirty || !subscriptionForm.controls.seatCount?.touched">
+                                                    Seat count has to be a number bigger than 0.
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Authentication User Name
+                                            </label>
+                                            <div class="col-sm-8">
+                                                <input type="text" maxlength="250" class="form-control" id="authUsername" name="authUsername" [ngModel]="twoWayModel.authUsername" (keyup)="validateControl(subscriptionForm, 'authUsername')" autocomplete="off">
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+
+
+                                                <small class="text-danger" [hidden]="isAuthUsernameValid || !subscriptionForm.controls.authUsername?.dirty || !subscriptionForm.controls.authUsername?.touched">
+                                                    Authentication User Name is required
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Authentication Password
+                                            </label>
+                                            <div class="col-sm-8">
+                                                <input type="password" maxlength="250" class="form-control" id="authPassword" name="authPassword" [ngModel]="twoWayModel.authPassword" (keyup)="validateControl(subscriptionForm, 'authPassword')" autocomplete="new-password">
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+
+
+                                                <small class="text-danger" [hidden]="isAuthPasswordValid || !subscriptionForm.controls.authPassword?.dirty || !subscriptionForm.controls.authPassword?.touched">
+                                                    Authentication Password is required
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                                Client Download Location
+                                            </label>
+                                            <div class="col-sm-8">
+                                                <input type="text" maxlength="250" class="form-control" id="clientDownloadLocation" name="clientDownloadLocation" [ngModel]="twoWayModel.clientDownloadLocation" (keyup)="validateControl(subscriptionForm, 'clientDownloadLocation')">
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div>
+
+
+                                                <small class="text-danger" [hidden]="isClientDownloadLocationValid || !subscriptionForm.controls.clientDownloadLocation?.dirty || !subscriptionForm.controls.clientDownloadLocation?.touched">
+                                                    Client Download Location is required
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label">
+                                            </label>
+                                            <div class="col-sm-8">
+                                                <button type="submit" class="btn btn-default btn-fill pull-right" [disabled]="!isFormValid">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                            </div>  <!-- card-content -->
+
+                            <alert></alert>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="custom-modal-background"></div>
+
+</modal>

@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EAF63D21-9FA2-4676-99F7-F28627F97E34}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ent.manager.Presentation</RootNamespace>
+    <AssemblyName>ent.manager.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vs\config\applicationhost.config" />
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\tasks.vs.json" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="angular-cli.json" />
+    <None Include="CHANGELOG.md" />
+    <None Include="e2e\tsconfig.e2e.json" />
+    <None Include="New File" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="package-lock.json" />
+    <None Include="package.json" />
+    <None Include="src\assets\css\paper-dashboard.css.map" />
+    <None Include="src\assets\DeviceHealth\config.json" />
+    <None Include="src\assets\DeviceHealth\font\fontello.eot" />
+    <None Include="src\assets\DeviceHealth\font\fontello.ttf" />
+    <None Include="src\assets\DeviceHealth\font\fontello.woff" />
+    <None Include="src\assets\DeviceHealth\font\fontello.woff2" />
+    <None Include="src\assets\env-specific.json" />
+    <None Include="src\assets\fonts\themify.eot" />
+    <None Include="src\assets\fonts\themify.ttf" />
+    <None Include="src\assets\fonts\themify.woff" />
+    <None Include="src\assets\i18n\ko.json" />
+    <None Include="src\assets\i18n\zhhant.json" />
+    <None Include="src\assets\i18n\zhhans.json" />
+    <None Include="src\assets\i18n\en.json" />
+    <None Include="src\assets\sass\paper-dashboard.scss" />
+    <None Include="src\assets\sass\paper\mixins\_alerts.scss" />
+    <None Include="src\assets\sass\paper\mixins\_buttons.scss" />
+    <None Include="src\assets\sass\paper\mixins\_cards.scss" />
+    <None Include="src\assets\sass\paper\mixins\_chartist.scss" />
+    <None Include="src\assets\sass\paper\mixins\_icons.scss" />
+    <None Include="src\assets\sass\paper\mixins\_inputs.scss" />
+    <None Include="src\assets\sass\paper\mixins\_labels.scss" />
+    <None Include="src\assets\sass\paper\mixins\_navbars.scss" />
+    <None Include="src\assets\sass\paper\mixins\_sidebar.scss" />
+    <None Include="src\assets\sass\paper\mixins\_social.scss" />
+    <None Include="src\assets\sass\paper\mixins\_table-row.scss" />
+    <None Include="src\assets\sass\paper\mixins\_tabs.scss" />
+    <None Include="src\assets\sass\paper\mixins\_tags.scss" />
+    <None Include="src\assets\sass\paper\mixins\_transparency.scss" />
+    <None Include="src\assets\sass\paper\mixins\_vendor-prefixes.scss" />
+    <None Include="src\assets\sass\paper\plugins\_animate.scss" />
+    <None Include="src\assets\sass\paper\plugins\_bootstrap-select.scss" />
+    <None Include="src\assets\sass\paper\plugins\_bootstrap-table.scss" />
+    <None Include="src\assets\sass\paper\plugins\_chartist.scss" />
+    <None Include="src\assets\sass\paper\plugins\_datatables.net.scss" />
+    <None Include="src\assets\sass\paper\plugins\_datetime-picker.scss" />
+    <None Include="src\assets\sass\paper\plugins\_fixed-plugin.scss" />
+    <None Include="src\assets\sass\paper\plugins\_fullcalendar.scss" />
+    <None Include="src\assets\sass\paper\plugins\_jquery.jvectormap.scss" />
+    <None Include="src\assets\sass\paper\plugins\_nouislider.scss" />
+    <None Include="src\assets\sass\paper\plugins\_perfect-scrollbar.scss" />
+    <None Include="src\assets\sass\paper\plugins\_sweetalert2.scss" />
+    <None Include="src\assets\sass\paper\_alerts.scss" />
+    <None Include="src\assets\sass\paper\_animated-buttons.scss" />
+    <None Include="src\assets\sass\paper\_buttons.scss" />
+    <None Include="src\assets\sass\paper\_cards.scss" />
+    <None Include="src\assets\sass\paper\_carousel.scss" />
+    <None Include="src\assets\sass\paper\_chat-message.scss" />
+    <None Include="src\assets\sass\paper\_checkbox-radio.scss" />
+    <None Include="src\assets\sass\paper\_circlechart.scss" />
+    <None Include="src\assets\sass\paper\_collapse.scss" />
+    <None Include="src\assets\sass\paper\_dropdown.scss" />
+    <None Include="src\assets\sass\paper\_footers.scss" />
+    <None Include="src\assets\sass\paper\_forms.scss" />
+    <None Include="src\assets\sass\paper\_inputs.scss" />
+    <None Include="src\assets\sass\paper\_labels.scss" />
+    <None Include="src\assets\sass\paper\_media.scss" />
+    <None Include="src\assets\sass\paper\_misc.scss" />
+    <None Include="src\assets\sass\paper\_mixins.scss" />
+    <None Include="src\assets\sass\paper\_modal.scss" />
+    <None Include="src\assets\sass\paper\_navbars.scss" />
+    <None Include="src\assets\sass\paper\_pages.scss" />
+    <None Include="src\assets\sass\paper\_progress-bars.scss" />
+    <None Include="src\assets\sass\paper\_responsive.scss" />
+    <None Include="src\assets\sass\paper\_sidebar-and-main-panel.scss" />
+    <None Include="src\assets\sass\paper\_sliders.scss" />
+    <None Include="src\assets\sass\paper\_social.scss" />
+    <None Include="src\assets\sass\paper\_switch.scss" />
+    <None Include="src\assets\sass\paper\_tables.scss" />
+    <None Include="src\assets\sass\paper\_tabs-navs-pagination.scss" />
+    <None Include="src\assets\sass\paper\_tags.scss" />
+    <None Include="src\assets\sass\paper\_timeline.scss" />
+    <None Include="src\assets\sass\paper\_tooltips-and-popovers.scss" />
+    <None Include="src\assets\sass\paper\_typography.scss" />
+    <None Include="src\assets\sass\paper\_variables.scss" />
+    <None Include="src\tsconfig.app.json" />
+    <None Include="src\tsconfig.spec.json" />
+    <None Include="tsconfig.json" />
+    <None Include="tslint.json" />
+    <None Include="typings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="documentation\css\documentation.css" />
+    <Content Include="documentation\tutorial-components.html" />
+    <Content Include="karma.conf.js" />
+    <Content Include="protractor.conf.js" />
+    <Content Include="readme.txt" />
+    <Content Include="src\app\admin\report\admin-report.component.html" />
+    <Content Include="src\app\admin\report\admin-report.css" />
+    <Content Include="src\app\app.component.css" />
+    <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\dashboard\deviceeventsandroid\deviceeventsandroid.component.html" />
+    <Content Include="src\app\dashboard\deviceeventsandroid\deviceeventsandroid.css" />
+    <Content Include="src\app\dashboard\deviceeventsios\deviceeventsios.component.html" />
+    <Content Include="src\app\dashboard\deviceeventsios\deviceeventsios.css" />
+    <Content Include="src\app\dashboard\licence\licence.component.html" />
+    <Content Include="src\app\dashboard\licence\licence.css" />
+    <Content Include="src\app\dashboard\seat\seat.component.html" />
+    <Content Include="src\app\dashboard\seat\seat.css" />
+    <Content Include="src\app\dashboard\overview\overview.component.html" />
+    <Content Include="src\app\dashboard\overview\overview.css" />
+    <Content Include="src\app\enterprise\list\enterprise-list.css" />
+    <Content Include="src\app\global\manager.css" />
+    <Content Include="src\app\pages\changePassword\changePassword.css" />
+    <Content Include="src\app\pages\emailVerify\emailVerify.css" />
+    <Content Include="src\app\pages\emailVerify\emailVerify.component.html" />
+    <Content Include="src\app\pages\changePassword\changePassword.component.html" />
+    <Content Include="src\app\pages\login\login.css" />
+    <Content Include="src\app\pages\resetPassword\resetPassword.css" />
+    <Content Include="src\app\pages\resetPassword\resetPassword.component.html" />
+    <Content Include="src\app\partner\partnerlist\partner-list.css" />
+    <Content Include="src\app\shared\alert\alert.css" />
+    <Content Include="src\app\shared\modalheader\modalheader.component.html" />
+    <Content Include="src\app\shared\modalheader\modalheader.css" />
+    <Content Include="src\app\shared\navbar\navbar.css" />
+    <Content Include="src\app\shared\pagination\pagination.css" />
+    <Content Include="src\app\shared\piechart\piechart.component.html" />
+    <Content Include="src\app\shared\piechart\piechart.css" />
+    <Content Include="src\app\shared\searchbar\searchbar.css" />
+    <Content Include="src\app\shared\searchbar\searchbar.component.html" />
+    <Content Include="src\app\shared\pagination\pagination.component.html" />
+    <Content Include="src\app\shared\simplemodal\modal.css" />
+    <Content Include="src\app\subscription\list\subscription-list.css" />
+    <Content Include="src\app\user\userlist\user-list.css" />
+    <Content Include="src\app\user\userlist\user-list.component.html" />
+    <Content Include="src\app\subscription\list\subscription-list.component.html" />
+    <Content Include="src\app\enterprise\list\enterprise-list.component.html" />
+    <Content Include="src\app\layouts\admin\admin-layout.component.html" />
+    <Content Include="src\app\layouts\auth\auth-layout.component.html" />
+    <Content Include="src\app\pages\login\login.component.html" />
+    <Content Include="src\app\partner\partnerlist\partner-list.component.html" />
+    <Content Include="src\app\shared\alert\alert.component.html" />
+    <Content Include="src\app\shared\footer\footer.component.html" />
+    <Content Include="src\app\shared\navbar\navbar.component.html" />
+    <Content Include="src\app\sidebar\sidebar.component.css" />
+    <Content Include="src\app\sidebar\sidebar.component.html" />
+    <Content Include="src\assets\css\bootstrap.min.css" />
+    <Content Include="src\assets\css\demo.css" />
+    <Content Include="src\assets\css\index.css" />
+    <Content Include="src\assets\css\sweetalert2.css" />
+    <Content Include="src\assets\css\paper-dashboard.css" />
+    <Content Include="src\assets\css\themify-icons.css" />
+    <Content Include="src\assets\css\toastr.min.css" />
+    <Content Include="src\assets\DeviceHealth\css\animation.css" />
+    <Content Include="src\assets\DeviceHealth\css\fontello-codes.css" />
+    <Content Include="src\assets\DeviceHealth\css\fontello-embedded.css" />
+    <Content Include="src\assets\DeviceHealth\css\fontello-ie7-codes.css" />
+    <Content Include="src\assets\DeviceHealth\css\fontello-ie7.css" />
+    <Content Include="src\assets\DeviceHealth\css\fontello.css" />
+    <Content Include="src\assets\DeviceHealth\demo.html" />
+    <Content Include="src\assets\DeviceHealth\font\fontello.svg" />
+    <Content Include="src\assets\DeviceHealth\README.txt" />
+    <Content Include="src\assets\fonts\themify.svg" />
+    <Content Include="src\assets\img\angular.png" />
+    <Content Include="src\assets\img\angular2-logo-white.png" />
+    <Content Include="src\assets\img\apple-icon.png" />
+    <Content Include="src\assets\img\background.jpg" />
+    <Content Include="src\assets\img\background\background-1.jpg" />
+    <Content Include="src\assets\img\background\background-2.jpg" />
+    <Content Include="src\assets\img\background\background-3.jpg" />
+    <Content Include="src\assets\img\background\background-4.jpg" />
+    <Content Include="src\assets\img\background\background-5.png" />
+    <Content Include="src\assets\img\background\login_bg.jpg" />
+    <Content Include="src\assets\img\default-avatar.png" />
+    <Content Include="src\assets\img\faces\face-0.jpg" />
+    <Content Include="src\assets\img\faces\face-1.jpg" />
+    <Content Include="src\assets\img\faces\face-2.jpg" />
+    <Content Include="src\assets\img\faces\face-3.jpg" />
+    <Content Include="src\assets\img\fav.ico" />
+    <Content Include="src\assets\img\favicon.png" />
+    <Content Include="src\assets\img\flags\AD.png" />
+    <Content Include="src\assets\img\flags\AE.png" />
+    <Content Include="src\assets\img\flags\AG.png" />
+    <Content Include="src\assets\img\flags\AM.png" />
+    <Content Include="src\assets\img\flags\AR.png" />
+    <Content Include="src\assets\img\flags\AT.png" />
+    <Content Include="src\assets\img\flags\AU.png" />
+    <Content Include="src\assets\img\flags\BE.png" />
+    <Content Include="src\assets\img\flags\BF.png" />
+    <Content Include="src\assets\img\flags\BG.png" />
+    <Content Include="src\assets\img\flags\BO.png" />
+    <Content Include="src\assets\img\flags\BR.png" />
+    <Content Include="src\assets\img\flags\CA.png" />
+    <Content Include="src\assets\img\flags\CD.png" />
+    <Content Include="src\assets\img\flags\CG.png" />
+    <Content Include="src\assets\img\flags\CH.png" />
+    <Content Include="src\assets\img\flags\CL.png" />
+    <Content Include="src\assets\img\flags\CM.png" />
+    <Content Include="src\assets\img\flags\CN.png" />
+    <Content Include="src\assets\img\flags\CO.png" />
+    <Content Include="src\assets\img\flags\CZ.png" />
+    <Content Include="src\assets\img\flags\DE.png" />
+    <Content Include="src\assets\img\flags\DJ.png" />
+    <Content Include="src\assets\img\flags\DK.png" />
+    <Content Include="src\assets\img\flags\DZ.png" />
+    <Content Include="src\assets\img\flags\EE.png" />
+    <Content Include="src\assets\img\flags\EG.png" />
+    <Content Include="src\assets\img\flags\ES.png" />
+    <Content Include="src\assets\img\flags\FI.png" />
+    <Content Include="src\assets\img\flags\FR.png" />
+    <Content Include="src\assets\img\flags\GA.png" />
+    <Content Include="src\assets\img\flags\GB.png" />
+    <Content Include="src\assets\img\flags\GM.png" />
+    <Content Include="src\assets\img\flags\GT.png" />
+    <Content Include="src\assets\img\flags\HN.png" />
+    <Content Include="src\assets\img\flags\HT.png" />
+    <Content Include="src\assets\img\flags\HU.png" />
+    <Content Include="src\assets\img\flags\ID.png" />
+    <Content Include="src\assets\img\flags\IE.png" />
+    <Content Include="src\assets\img\flags\IL.png" />
+    <Content Include="src\assets\img\flags\IN.png" />
+    <Content Include="src\assets\img\flags\IQ.png" />
+    <Content Include="src\assets\img\flags\IR.png" />
+    <Content Include="src\assets\img\flags\IT.png" />
+    <Content Include="src\assets\img\flags\JM.png" />
+    <Content Include="src\assets\img\flags\JO.png" />
+    <Content Include="src\assets\img\flags\JP.png" />
+    <Content Include="src\assets\img\flags\KG.png" />
+    <Content Include="src\assets\img\flags\KN.png" />
+    <Content Include="src\assets\img\flags\KP.png" />
+    <Content Include="src\assets\img\flags\KR.png" />
+    <Content Include="src\assets\img\flags\KW.png" />
+    <Content Include="src\assets\img\flags\KZ.png" />
+    <Content Include="src\assets\img\flags\LA.png" />
+    <Content Include="src\assets\img\flags\LB.png" />
+    <Content Include="src\assets\img\flags\LC.png" />
+    <Content Include="src\assets\img\flags\LS.png" />
+    <Content Include="src\assets\img\flags\LU.png" />
+    <Content Include="src\assets\img\flags\LV.png" />
+    <Content Include="src\assets\img\flags\MG.png" />
+    <Content Include="src\assets\img\flags\MK.png" />
+    <Content Include="src\assets\img\flags\ML.png" />
+    <Content Include="src\assets\img\flags\MM.png" />
+    <Content Include="src\assets\img\flags\MT.png" />
+    <Content Include="src\assets\img\flags\MX.png" />
+    <Content Include="src\assets\img\flags\NA.png" />
+    <Content Include="src\assets\img\flags\NE.png" />
+    <Content Include="src\assets\img\flags\NG.png" />
+    <Content Include="src\assets\img\flags\NI.png" />
+    <Content Include="src\assets\img\flags\NL.png" />
+    <Content Include="src\assets\img\flags\NO.png" />
+    <Content Include="src\assets\img\flags\OM.png" />
+    <Content Include="src\assets\img\flags\PA.png" />
+    <Content Include="src\assets\img\flags\PE.png" />
+    <Content Include="src\assets\img\flags\PG.png" />
+    <Content Include="src\assets\img\flags\PK.png" />
+    <Content Include="src\assets\img\flags\PL.png" />
+    <Content Include="src\assets\img\flags\PT.png" />
+    <Content Include="src\assets\img\flags\PY.png" />
+    <Content Include="src\assets\img\flags\QA.png" />
+    <Content Include="src\assets\img\flags\RO.png" />
+    <Content Include="src\assets\img\flags\RU.png" />
+    <Content Include="src\assets\img\flags\RW.png" />
+    <Content Include="src\assets\img\flags\SA.png" />
+    <Content Include="src\assets\img\flags\SE.png" />
+    <Content Include="src\assets\img\flags\SG.png" />
+    <Content Include="src\assets\img\flags\SL.png" />
+    <Content Include="src\assets\img\flags\SN.png" />
+    <Content Include="src\assets\img\flags\SO.png" />
+    <Content Include="src\assets\img\flags\SV.png" />
+    <Content Include="src\assets\img\flags\TD.png" />
+    <Content Include="src\assets\img\flags\TJ.png" />
+    <Content Include="src\assets\img\flags\TL.png" />
+    <Content Include="src\assets\img\flags\TR.png" />
+    <Content Include="src\assets\img\flags\TZ.png" />
+    <Content Include="src\assets\img\flags\UA.png" />
+    <Content Include="src\assets\img\flags\US.png" />
+    <Content Include="src\assets\img\flags\VE.png" />
+    <Content Include="src\assets\img\flags\VN.png" />
+    <Content Include="src\assets\img\flags\YE.png" />
+    <Content Include="src\assets\img\mask.png" />
+    <Content Include="src\assets\img\new_logo.png" />
+    <Content Include="src\assets\img\tables\agenda.png" />
+    <Content Include="src\assets\img\tables\evernote.png" />
+    <Content Include="src\assets\img\tables\stylus.jpg" />
+    <Content Include="src\assets\img\tim_80x80.png" />
+    <Content Include="src\assets\img\manager_logo_login.png" />
+    <Content Include="src\assets\img\manager_logo_old.png" />
+    <Content Include="src\assets\img\manager_logo.png" />
+    <Content Include="src\assets\img\ent_one.png" />
+    <Content Include="src\assets\img\_favicon.ico" />
+    <Content Include="src\assets\js\aes.js" />
+    <Content Include="src\assets\js\core.js" />
+    <Content Include="src\assets\js\enc-base64-min.js" />
+    <Content Include="src\assets\js\jquery-3.2.1.min.js" />
+    <Content Include="src\assets\js\jquery-jvectormap.js" />
+    <Content Include="src\assets\js\jquery.validate.min.js" />
+    <Content Include="src\assets\js\perfect-scrollbar.min.js" />
+    <Content Include="src\assets\js\sweetalert2.js" />
+    <Content Include="src\assets\js\toastr.min.js" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\index.html" />
+    <Content Include="src\styles.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="e2e\app.po.ts" />
+    <TypeScriptCompile Include="src\app\admin\admin.module.ts" />
+    <TypeScriptCompile Include="src\app\admin\admin.routing.ts" />
+    <TypeScriptCompile Include="src\app\admin\report\admin-report.component.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\app.routing.ts" />
+    <TypeScriptCompile Include="src\app\core\core.module.ts" />
+    <TypeScriptCompile Include="src\app\core\models\deviceEventQuery.ts" />
+    <TypeScriptCompile Include="src\app\core\models\deviceEventResult.ts" />
+    <TypeScriptCompile Include="src\app\core\models\envSpecific.ts" />
+    <TypeScriptCompile Include="src\app\core\models\messageBag.ts" />
+    <TypeScriptCompile Include="src\app\core\models\usageReport.ts" />
+    <TypeScriptCompile Include="src\app\core\models\chartistDataSery.ts" />
+    <TypeScriptCompile Include="src\app\core\models\dashboardEnterprise.ts" />
+    <TypeScriptCompile Include="src\app\core\models\dashboardPartner.ts" />
+    <TypeScriptCompile Include="src\app\core\models\chartistData.ts" />
+    <TypeScriptCompile Include="src\app\core\models\serverCodeMapping.ts" />
+    <TypeScriptCompile Include="src\app\core\models\enumMapping.ts" />
+    <TypeScriptCompile Include="src\app\core\models\apiResult.ts" />
+    <TypeScriptCompile Include="src\app\core\models\serverResponse.ts" />
+    <TypeScriptCompile Include="src\app\core\models\dashboardOverview.ts" />
+    <TypeScriptCompile Include="src\app\core\models\searchCriteria.ts" />
+    <TypeScriptCompile Include="src\app\core\models\seatFilter.ts" />
+    <TypeScriptCompile Include="src\app\core\models\userFilter.ts" />
+    <TypeScriptCompile Include="src\app\core\services\adminreport.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\deviceevents.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\page.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\language.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\environmentSpecific.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\environmentSpecific.resolver.ts" />
+    <TypeScriptCompile Include="src\app\core\services\dashboard.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\core\services\report.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\modal.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\lookup.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\dashboard.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\scope-guard.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\spinner.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\licence.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\aes.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\utility.service.ts" />
+    <TypeScriptCompile Include="src\app\core\variables\global.variable.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.module.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.routing.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\deviceeventsandroid\deviceeventsandroid.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\deviceeventsios\deviceeventsios.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\licence\licence.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\seat\seat.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\overview\overview.component.ts" />
+    <TypeScriptCompile Include="src\app\core\models\user.ts" />
+    <TypeScriptCompile Include="src\app\core\models\userRole.ts" />
+    <TypeScriptCompile Include="src\app\core\services\token.interceptor.ts" />
+    <TypeScriptCompile Include="src\app\core\services\toastr.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\user.service.ts" />
+    <TypeScriptCompile Include="src\app\pages\emailVerify\emailVerify.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\changePassword\changePassword.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\resetPassword\resetPassword.component.ts" />
+    <TypeScriptCompile Include="src\app\partner\partnerlist\partner-list.spec.ts" />
+    <TypeScriptCompile Include="src\app\shared\modalheader\modalheader.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\modalheader\modalheader.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\piechart\piechart.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\piechart\piechart.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\searchbar\searchbar.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\searchbar\searchbar.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\pagination\pagination.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\pagination\pagination.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\simplemodal\modal.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\simplemodal\modal.component.ts" />
+    <TypeScriptCompile Include="src\app\user\userlist\user-list.component.ts" />
+    <TypeScriptCompile Include="src\app\user\user.module.ts" />
+    <TypeScriptCompile Include="src\app\user\user.routing.ts" />
+    <TypeScriptCompile Include="src\app\subscription\subscription.module.ts" />
+    <TypeScriptCompile Include="src\app\subscription\subscription.routing.ts" />
+    <TypeScriptCompile Include="src\app\subscription\list\subscription-list.component.ts" />
+    <TypeScriptCompile Include="src\app\core\models\subscription.ts" />
+    <TypeScriptCompile Include="src\app\core\services\subscription.service.ts" />
+    <TypeScriptCompile Include="src\app\enterprise\enterprise.module.ts" />
+    <TypeScriptCompile Include="src\app\enterprise\enterprise.routing.ts" />
+    <TypeScriptCompile Include="src\app\core\models\enterprise.ts" />
+    <TypeScriptCompile Include="src\app\enterprise\list\enterprise-list.component.ts" />
+    <TypeScriptCompile Include="src\app\core\services\enterprise.service.ts" />
+    <TypeScriptCompile Include="src\app\layouts\admin\admin-layout.component.ts" />
+    <TypeScriptCompile Include="src\app\layouts\auth\auth-layout.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\login\login.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages.routing.ts" />
+    <TypeScriptCompile Include="src\app\core\services\auth.guard.ts" />
+    <TypeScriptCompile Include="src\app\core\services\authentication.service.ts" />
+    <TypeScriptCompile Include="src\app\core\models\partner.ts" />
+    <TypeScriptCompile Include="src\app\partner\partner.module.ts" />
+    <TypeScriptCompile Include="src\app\partner\partner.routing.ts" />
+    <TypeScriptCompile Include="src\app\partner\partnerlist\partner-list.component.ts" />
+    <TypeScriptCompile Include="src\app\core\services\partner.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\alert\alert.component.ts" />
+    <TypeScriptCompile Include="src\app\core\services\alert.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\alert\alert.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\footer\footer.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\footer\footer.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\navbar\navbar.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\navbar\navbar.module.ts" />
+    <TypeScriptCompile Include="src\app\sidebar\sidebar.component.ts" />
+    <TypeScriptCompile Include="src\app\sidebar\sidebar.module.ts" />
+    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
+    <TypeScriptCompile Include="src\typings.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\manager\v15\" />
+    <Folder Include=".vs\ent.manager\v14\" />
+    <Folder Include=".vs\ent.manager\v15\" />
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

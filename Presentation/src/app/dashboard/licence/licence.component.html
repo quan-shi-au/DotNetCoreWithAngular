@@ -1,0 +1,141 @@
+<div class="main-content" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card ent-page-subtitle">
+                    <div class="card-header">
+                        <div class="ent-font-bold pull-left">
+                            {{currentSubscription?.name}}
+                        </div>
+                        <div class="pull-right">
+                            <b>{{"DashboardLicence.ReportDate" | translate}}&nbsp;:</b>&nbsp;{{currentSubscription?.reportdate | date:'dd/MM/yyyy'}}
+                            <span [hidden]="currentSubscription?.reportdate">{{"DashboardLicence.ReportNotAvailable" | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="dashboard-partner">
+            <h4 class="card-title ent-font-bold">{{"DashboardLicence.SubscriptionDetails" | translate}}</h4>
+        </div>
+
+        <div class="row flexbox-container">
+            <div class="col-lg-6">
+
+                <div class="card manager-subscription-detail">
+                    <div class="card-content">
+                        <div class="row">
+                            <label class="col-xs-5 control-label">
+                                {{ "DashboardLicence.EnterpriseApplication" | translate}}
+                            </label>
+                            <label class="col-xs-7 control-label manager-subscription-detail-value">
+                                {{currentSubscription?.enterpriseapplication}}
+                            </label>
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-5 control-label">
+                                {{ "DashboardLicence.SubscriptionSeats" | translate}}
+                            </label>
+                            <label class="col-xs-7 control-label manager-subscription-detail-value">
+                                {{currentSubscription.seats}}
+                            </label>
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-5 control-label">
+                                {{ "DashboardLicence.Enterprise" | translate}}
+                            </label>
+                            <label class="col-xs-7 control-label manager-subscription-detail-value">
+                                {{currentSubscription.enterprisename}}
+                            </label>
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-5 control-label">
+                                {{ "DashboardLicence.ManagingPartner" | translate}}
+                            </label>
+
+                            <label class="col-xs-7 control-label manager-subscription-detail-value">
+                                {{currentSubscription.managingpartner}}
+                            </label>
+
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-5 control-label">
+                                {{ "DashboardLicence.SubscriptionCreated" | translate}}
+                            </label>
+
+                            <label class="col-xs-7 control-label manager-subscription-detail-value">
+                                {{currentSubscription.subdate | date:'dd/MM/yyyy' }}
+                            </label>
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-5 control-label">
+                                {{ "Common.UserName" | translate}}:
+                            </label>
+
+                            <label class="col-xs-7 control-label manager-subscription-detail-value">
+                                {{currentSubscription.subAuthUn}}
+                            </label>
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-5 control-label">
+                                {{ "Common.Password" | translate}}:
+                            </label>
+
+                            <label class="col-xs-7 control-label manager-subscription-detail-value">
+                                {{currentSubscription.subAuthPw}}
+                            </label>
+                        </div>
+                        <div class="row">
+                            <label class="col-xs-5 control-label">
+                                {{ "DashboardLicence.DownloadLocation" | translate}}
+                            </label>
+
+                            <label class="col-xs-7 control-label manager-subscription-detail-value">
+                                <a href="{{currentSubscription.clientDownloadLocation}}">{{currentSubscription.clientDownloadLocation}}</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <piechart-cmp [dataPreferences]="usageData" [chartPreferencesId]="usageId" [title]="usageTitle" [legends]="usageLegend" [noChartMessage]="noChartMessageUsage" [isChartAvailable]="isChartAvailableUsage"></piechart-cmp>
+            </div>
+        </div>
+
+        <div class="dashboard-partner">
+            <h4 class="card-title ent-font-bold">{{"DashboardLicence.EnterpriseSeatOverview" | translate}}</h4>
+        </div>
+
+        <div class="row flexbox-container">
+            <div class="col-lg-4">
+                <piechart-cmp [dataPreferences]="osData" [chartPreferencesId]="osId" [title]="osTitle" [legends]="osLegend" [noChartMessage]="noChartMessageOs" [isChartAvailable]="isChartAvailableOs"></piechart-cmp>
+            </div>
+            <div class="col-lg-4">
+                <piechart-cmp [dataPreferences]="manufacturerData" [chartPreferencesId]="manufacturerId" [title]="manufacturerTitle" [legends]="manufacturerLegend" [noChartMessage]="noChartMessageManufacturer" [isChartAvailable]="isChartAvailableManufacturer"></piechart-cmp>
+            </div>
+            <div class="col-lg-4">
+                <piechart-cmp [dataPreferences]="typeData" [chartPreferencesId]="typeId" [title]="typeTitle" [legends]="typeLegend" [noChartMessage]="noChartMessageType" [isChartAvailable]="isChartAvailableType"></piechart-cmp>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <alert></alert>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,276 @@
+﻿@media (min-width: 768px) {
+    td.manager-table-wrap {
+        display: table-cell;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+    }
+
+    table.manager-table-wrap {
+        table-layout: fixed;
+        width: 100%
+    }
+
+    div.container-fluid div.ent-page-subtitle div.ent-page-subtitle-button {
+        float: right;
+        display: inline;
+    }
+
+    modal .custom-modal .custom-modal-body {
+        padding: 20px;
+        background: #fff;
+        margin: 40px;
+        margin-left: 350px;
+        width: 60%;
+        border-radius: 6px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    div.container-fluid div.ent-page-subtitle div.ent-page-subtitle-button {
+        clear:both;
+        margin-top:20px;
+    }
+
+    modal .custom-modal .custom-modal-body {
+        padding: 20px;
+        background: #fff;
+        margin: 40px;
+        margin-left: 50px;
+        width: 60%;
+        border-radius: 6px;
+    }
+
+
+}
+
+.dropdown button {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.card .card-header img {
+    width: auto !important;
+    max-width: 100%;
+}
+
+.manager-searchbar-top {
+    margin-top: 15px;
+}
+
+.manager-separator {
+    border-bottom: 1px solid;
+    margin-top: 10px;
+}
+
+.manager-pie-chunk1 {
+    fill: #23CCEF;
+    color: #23CCEF;
+}
+
+.manager-pie-chunk2 {
+    fill: #FB404B;
+    color: #FB404B;
+}
+
+.manager-pie-chunk3 {
+    fill: #FFA534;
+    color: #FFA534;
+}
+
+.manager-pie-chunk4 {
+    fill: #c8ff34;
+    color: #c8ff34;
+}
+
+.manager-pie-chunk5 {
+    fill: #238bef;
+    color: #238bef;
+}
+
+.manager-pie-chunk6 {
+    fill: #999;
+    color: #999;
+}
+
+::before input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #F3F2EE inset;
+}
+
+div.manager-general-vertical-space {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div img.manager_logo_img {
+    margin-left: 10px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    width: 300px;
+    z-index: -1;
+}
+
+.manager-cursor-wait, div.manager-cursor-wait, div.manager-cursor-wait * {
+    cursor: wait !important;
+}
+
+.manager-content-title {
+    color: #003E6F;
+}
+
+.manager-disabled {
+    color: #a6a6a7;
+}
+
+.manager-inline-link {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.dashboard-partner {
+    color: #3293C8;
+    /*color: #080e64;*/
+}
+
+.manager-table-list {
+    padding: 20px;
+}
+
+div.container-fluid div.ent-page-subtitle {
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+
+
+div.main-content {
+    padding-top: 0px !important;
+}
+
+.ent-font-bold {
+    font-weight: bold;
+}
+
+popup div.row {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.ent-popup-content {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.ent-popup-title {
+    font-weight: bold;
+    font-size: 150%;
+    margin-bottom: 10px;
+}
+
+modal {
+    display: none
+}
+
+    modal .custom-modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        overflow: auto
+    }
+
+    modal .custom-modal-background {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        opacity: .75;
+        z-index: 900
+    }
+
+body.custom-modal-open {
+    overflow: hidden
+}
+
+.status-active {
+    color: green;
+}
+
+.status-cancelled {
+    color: red;
+}
+
+td.td-actions a {
+    color: cornflowerblue;
+}
+
+.status-pending {
+    color: orange;
+}
+
+.status-disabled {
+    color: red;
+}
+
+.manager-text-center {
+    text-align: center;
+}
+
+h4 {
+    margin-top: 15px !important;
+}
+
+button[type=submit].pull-right {
+    margin-bottom:10px;
+}
+
+
+body {
+    font-family: 'Muli', "Helvetica", Arial, sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td-name, td {
+    font-family: 'Muli', "Helvetica", Arial, sans-serif;
+}
+
+.status-description-green {
+    background-color: #739F3D;
+    color: white;
+}
+
+.status-description-yellow {
+    background-color: #F8A055;
+    color: white;
+}
+
+
+.status-description-red {
+    background-color: #ED5752;
+    color: white;
+}
+

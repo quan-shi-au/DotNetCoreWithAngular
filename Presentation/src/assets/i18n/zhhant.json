@@ -1,0 +1,179 @@
+﻿{
+  "Common": {
+    "SubscriptionName": "訂閱軟體名稱",
+    "Created": "創建日期",
+    "EnterpriseSeats": "企業設備",
+    "Status": "狀態",
+    "Details": "詳細信息",
+    "Login": "登入",
+    "UserName": "使用者名稱",
+    "Password": "密碼",
+    "Language": "語言",
+    "EnterpriseApplication": "企業應用",
+    "FirstName": "名字",
+    "LastName": "姓氏",
+    "OptionalData": "額外資訊",
+    "Search": "搜尋",
+    "SearchFilter": "篩選條件",
+    "GeneralServerError": "伺服器發生錯誤",
+    "No": "取消",
+    "AreYouSure": "請確認"
+  },
+
+  "DashboardOverview": {
+    "PageTitle": "企業管理平台",
+    "PageSubtitle": "管理平台提供軟體概況資訊予已訂閱授權的企業和其相關合作夥伴",
+    "View": "檢視",
+    "NoEnterprises": "非公司組織",
+    "NoSubscriptions": "非訂閱客戶"
+  },
+
+  "DashboardLicence": {
+    "SubscriptionDetails": "訂閱詳情",
+    "EnterpriseSeatOverview": "企業設備概述",
+    "EnterpriseApplication": "企業應用:",
+    "Enterprise": "企業:",
+    "SubscriptionSeats": "訂閱數量:",
+    "ManagingPartner": "合作廠商:",
+    "SubscriptionCreated": "訂閱日期:",
+    "Usage": "使用流量",
+    "DeviceOsVersion": "設備作業軟體版本",
+    "DeviceManufacturer": "設備製造廠商",
+    "DeviceType": "設備類型",
+    "NoDataAvailable": "沒有可用的信息",
+    "NoSeatDataAvailable": "沒有可用的設備數據",
+    "EnterpriseSeatDetails": "企業設備詳細信息",
+    "LicenceKey": "授權碼",
+    "ReportDate": "最近更新日期",
+    "Active": "運作",
+    "Available": "可用",
+    "ReportNotAvailable": "訂閱報告不可用",
+    "DownloadLocation": "下載位置:",
+
+    "grid": {
+      "DeviceName": "設備名稱",
+      "DeviceModel": "設備型號",
+      "OsVersion": "作業軟體版本",
+      "ActivationDate": "注冊日期",
+      "LastUpdatedDate": "最近更新日期",
+      "Deactivate": "撤銷",
+      "Deviceevents": "事件"
+    }
+  },
+
+  "SeatDetail": {
+    "SeatDetailButton": "設備詳細信息",
+    "SeatDetailTitle": "設備詳細信息管理",
+    "SeatDetailSubTitle": "管理設備",
+    "SeatDeactivateSuccessful": "設備已成功停用。 該報告將在下一次計劃時更新。",
+    "SeatDeactivateFailed": "無法停用設備。",
+    "SeatDeactivateWarning": "在停用移動安全應用{{deviceName}}意味著該設備將不再受到保護。",
+    "SeatDeactivateConfirm": "確認"
+  },
+
+  "DeviceEvents": {
+    "Title": "設備事件",
+    "SubTitle": "設備事件",
+    "DeviceHealth": "設備健康",
+    "ActivationDate": "激活日期:",
+    "LastUpdated": "最近更新時間",
+    "DeviceInformationSubTitle": "設備信息",
+    "DeviceSpecsSubTitle": "Device Specs",
+    "FeatureStatusSubTitle": "Feature Status",
+    "HistorySubTitle": "History",
+    "HistorySecureApps": "Secure Apps",
+    "WebProtect": "網絡保護",
+    "DeviceHealthPanel": {
+      "DescriptionGreen": "Your device is protected",
+      "DescriptionYellow": "Your device protection status is unknown",
+      "DescriptionRed": "Your device is not protected"
+    },
+    "DeviceInformation": {
+      "Name": "名稱",
+      "Type": "類型",
+      "Model": "型號",
+      "PlatformVersion": "平台版本",
+      "Architecture": "結構",
+      "Memory": "存儲"
+    },
+    "ScanSummary": {
+      "SubTitle": "掃描摘要",
+      "AndroidType": "Type",
+      "AndroidDate": "Date",
+      "Duration": "Duration",
+      "ScannedApps": "Scanned Apps",
+      "MaliciousApps": "Malicious Apps",
+      "IosType": "Type of Scan",
+      "IosDate": "Scan Date",
+      "StartupStatus": "Startup Initialisation",
+      "InternetStatus": "Internet Enabled",
+      "PasscodeStatus": "Passcode"
+    },
+    "MalwareEvents": {
+      "SubTitle": "病毒事件",
+      "Date": "Date",
+      "Action": "行動",
+      "Type": "類型",
+      "InfectedObject": "受感染軟體"
+    },
+    "SecureApps": {
+      "Status": "Status",
+      "Date": "Date",
+      "AppName": "App Name"
+    }
+
+
+  },
+
+  "SideBar": {
+    "Dashboard": "顯示板",
+    "Logout": "登出"
+  },
+
+  "PagesLogin": {
+    "ForgotYourPassword": "忘記密碼",
+    "NotValidUserNamePassword": "輸入的帳號或密碼錯誤，請再試一次",
+    "AccountDisabled": "你的使用者帳號已被刪除"
+  },
+
+  "PagesResetPassword": {
+    "ResetPassword": "重設密碼",
+    "Reset": "重設",
+    "UserPrompt": "如果您輸入的用戶名與活動賬戶相關聯，您將收到一封電子郵件來完成該過程。",
+    "UserNameRequired": "輸入使用者名稱"
+  },
+
+  "PagesEmailVerify": {
+    "EmailVerify": "電子郵件驗證",
+    "LinkUsedError": "連結已被使用。請按<a href='{{hrefValue}}'>here</a>重設密碼。"
+  },
+
+  "PagesChangePassword": {
+    "ConfirmPassword": "確認密碼",
+    "PasswordlengthRequirement": "密碼至少須6字元",
+    "PasswordSymbolRequirement": "至少包含 1個符號 #?!@$%^&*-",
+    "PasswordLowercaseRequirement": "至少包含 1個小寫字母",
+    "PasswordUpppercaseRequirement": "至少包含 1個大寫字母",
+    "PasswordNumberRequirement": "至少有一個數字（'0' - '9'）",
+    "PasswordRequiredError": "請輸入密碼",
+    "PasswordRequirementNotMet": "密碼格式不符合要求",
+    "ConfirmPasswordRequiredError": "請輸入確認密碼",
+    "ConfirmPasswordNotMatching": "密碼設定不一致",
+    "ChangePasswordSuccess": "新密碼設定成功",
+    "ChangePasswordFailed": "密碼設定錯誤"
+  },
+
+  "Message": {
+    "UserNameAlreadyExist": "您輸入帳號已存在，請重新輸入",
+    "GeneralDbError": "資料庫錯誤",
+    "UserDoesNotExist": "無此使用者",
+    "DeletionFailed": "無法刪除",
+    "UserDisablingFailed": "系統無法取消用戶。",
+    "UserEnablingFailed": "系統無法啟用用戶。",
+    "UserDisabled": "帳號已被停用",
+    "LinkPreviouslyOpened": "連結已被打開",
+    "PasswordsNotMatch": "所提供的密碼不一致",
+    "PasswordSetFailed": "密碼設定失敗，請再試一次",
+    "InvalidRole": "您所提供的角色未設定權限"
+  }
+}

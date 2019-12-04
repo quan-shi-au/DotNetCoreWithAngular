@@ -1,0 +1,83 @@
+<div class="main-content" [ngClass]="{ 'manager-cursor-wait': waitingForResponse }">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card ent-page-subtitle">
+                    <div class="card-header">
+                        <div>
+                            {{ "SeatDetail.SeatDetailSubTitle" | translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="dashboard-partner">
+                    <h4 class="card-title ent-font-bold">{{ "DashboardLicence.EnterpriseSeatDetails" | translate}}</h4>
+                </div>
+
+                <div class="card">
+
+                    <searchbar-cmp (searchEvent)="searchSeat($event)"></searchbar-cmp>
+
+                    <div [hidden]="seaDetails.length > 0" class="card-content table-responsive table-full-width manager-subscription-no-seat-data">
+                        {{ "DashboardLicence.NoSeatDataAvailable" | translate}}
+                    </div>
+
+                    <div class="card-content table-responsive table-full-width" [hidden]="seaDetails.length == 0">
+                        <table class="table manager-table-list manager-table-wrap">
+                            <thead>
+                                <tr>
+                                    <th class="ent-font-bold">{{ headerRow[0] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[1] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[2] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[3] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[4] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[5] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[6] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[7] }}</th>
+                                    <th class="ent-font-bold">{{ headerRow[8] }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let seatDetail of seaDetails">
+                                    <td class="manager-text-center">
+                                        <span class="ti-mobile manager-device-type-icon" *ngIf="seatDetail.deviceType.toUpperCase().indexOf('Phone'.toUpperCase()) > -1"></span>
+                                        <span class="ti-tablet manager-device-type-icon" *ngIf="seatDetail.deviceType.toUpperCase()=='Tablet'.toUpperCase() || seatDetail.deviceType.toUpperCase()=='iPad'.toUpperCase()"></span>
+                                    </td>
+                                    <td class="manager-table-wrap">{{seatDetail.deviceName}}</td>
+                                    <td class="manager-table-wrap">{{seatDetail.firstName}}</td>
+                                    <td class="manager-table-wrap">{{seatDetail.lastName}}</td>
+                                    <td>{{seatDetail.optionalData}}</td>
+                                    <td>{{seatDetail.deviceModel}}</td>
+                                    <td>{{seatDetail.osVersion}}</td>
+                                    <td>{{seatDetail.localActivationDate | date : 'dd/MM/yyyy'}}</td>
+                                    <td>{{seatDetail.localLastUpdateDate | date : 'dd/MM/yyyy'}}</td>
+                                    <td class="td-actions text-middle" style='white-space: nowrap;'>
+                                        <button type="button" class="btn" (click)="deactivate(seatDetail)">{{"DashboardLicence.grid.Deactivate" | translate }}</button>
+                                        <button type="button" class="btn" (click)="viewDeviceEvents(seatDetail)" *ngIf="seatDetail.showEvent">{{"DashboardLicence.grid.Deviceevents" | translate }}</button>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <app-pagination [offset]="localOffset" [size]="localCount" [limit]="localLimit" (pageChange)="getDecryptInfo($event)"></app-pagination>
+
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
+</div>
+

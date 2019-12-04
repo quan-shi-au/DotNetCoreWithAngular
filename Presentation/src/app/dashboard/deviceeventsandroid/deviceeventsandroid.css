@@ -1,0 +1,52 @@
+﻿.device-health-icon {
+    margin-left: 10px;
+    margin-right: 50px;
+    font-size: 2.8em;
+}
+
+td {
+    text-align: left;
+}
+
+.device-info-card {
+    height: 100px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: rgb(50, 147, 200);
+}
+
+.web-protect-on {
+    background-color: #739F3D;
+}
+
+.web-protect-off {
+    background-color: darkgray;
+}
+
+@media (min-width:500px) {
+    .individual-panel {
+        height: 90px;
+    }
+    .health-description {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width:500px) {
+    .individual-panel {
+        height: 90px;
+    }
+
+    .health-description {
+        font-size:1.2em;
+    }
+}
+
+.device-up-to-date {
+    background-color: #739F3D;
+}
+
+.device-not-up-to-date {
+    background-color: #F8A055;
+}

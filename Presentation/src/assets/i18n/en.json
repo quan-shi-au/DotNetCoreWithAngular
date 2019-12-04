@@ -1,0 +1,179 @@
+﻿{
+  "Common": {
+    "SubscriptionName": "Subscription Name",
+    "Created": "Created",
+    "EnterpriseSeats": "Enterprise Devices",
+    "Status": "Status",
+    "Details": "Details",
+    "Login": "Login",
+    "UserName": "User Name",
+    "Password": "Password",
+    "Language": "Language",
+    "EnterpriseApplication": "Enterprise Application",
+    "FirstName": "First Name",
+    "LastName": "Last Name",
+    "OptionalData": "Optional Data",
+    "Search": "Search",
+    "SearchFilter": "Search Filter",
+    "GeneralServerError": "Server error",
+    "No": "No",
+    "AreYouSure": "Are you sure?"
+  },
+
+  "DashboardOverview": {
+    "PageTitle": "ent Enterprise Management Platform Dashboard",
+    "PageSubtitle": "Your dashboard provides an overview of any enterprise subscriptions created for your enterprise(s).",
+    "View": "View",
+    "NoEnterprises": "No Enterprises",
+    "NoSubscriptions": "No Subscriptions"
+  },
+
+  "DashboardLicence": {
+    "SubscriptionDetails": "Subscription Details",
+    "EnterpriseSeatOverview": "Enterprise Device Overview",
+    "EnterpriseApplication": "Enterprise Application:",
+    "Enterprise": "Enterprise:",
+    "SubscriptionSeats": "Maximum Number of Devices:",
+    "ManagingPartner": "Managing Partner:",
+    "SubscriptionCreated": "Subscription Created:",
+    "Usage": "Usage",
+    "DeviceOsVersion": "Device OS Version",
+    "DeviceManufacturer": "Device Manufacturer",
+    "DeviceType": "Device Type",
+    "NoDataAvailable": "No data available",
+    "NoSeatDataAvailable": "No device data available",
+    "EnterpriseSeatDetails": "Enterprise Device Details",
+    "LicenceKey": "Licence Key:",
+    "ReportDate": "Report Run Date",
+    "Active": "Active",
+    "Available": "Available",
+    "ReportNotAvailable": "Subscription report unavailable",
+    "DownloadLocation": "App Download URL:",
+
+    "grid": {
+      "DeviceName": "Device Name",
+      "DeviceModel": "Device Model",
+      "OsVersion": "OS Version",
+      "ActivationDate": "Activation Date",
+      "LastUpdatedDate": "Last Updated Date",
+      "Deactivate": "Deactivate",
+      "Deviceevents": "Events"
+    }
+  },
+
+  "SeatDetail": {
+    "SeatDetailButton": "Device Details",
+    "SeatDetailTitle": "Device Details Management",
+    "SeatDetailSubTitle": "Manage Device",
+    "SeatDeactivateSuccessful": "Device has been deactivated successfully. The report will be updated when it's next scheduled.",
+    "SeatDeactivateFailed": "Failed to deactivate device.",
+    "SeatDeactivateWarning": "Deactivating the Mobile Security application on {{deviceName}} means that the device will no longer be protected.",
+    "SeatDeactivateConfirm": "Yes, Deactivate"
+  },
+
+  "DeviceEvents": {
+    "Title": "Device Events",
+    "SubTitle": "Device Events",
+    "DeviceHealth": "Device Health",
+    "ActivationDate": "Activation Date:",
+    "LastUpdated": "Last Updated",
+    "DeviceInformationSubTitle": "Device Information",
+    "DeviceSpecsSubTitle": "Device Specs",
+    "FeatureStatusSubTitle": "Feature Status",
+    "HistorySubTitle": "History",
+    "HistorySecureApps": "Secure Apps",
+    "WebProtect": "Web Protect",
+    "DeviceHealthPanel": {
+      "DescriptionGreen": "Your device is protected",
+      "DescriptionYellow": "Your device protection status is unknown",
+      "DescriptionRed": "Your device is not protected"
+    },
+    "DeviceInformation": {
+      "Name": "Name",
+      "Type": "Type",
+      "Model": "Model",
+      "PlatformVersion": "Platform Version",
+      "Architecture": "Architecture",
+      "Memory": "Memory"
+    },
+    "ScanSummary": {
+      "SubTitle": "Scan Summary",
+      "AndroidType": "Type",
+      "AndroidDate": "Date",
+      "Duration": "Duration",
+      "ScannedApps": "Scanned Apps",
+      "MaliciousApps": "Malicious Apps",
+      "IosType": "Type of Scan",
+      "IosDate": "Scan Date",
+      "StartupStatus": "Startup Initialisation",
+      "InternetStatus": "Internet Enabled",
+      "PasscodeStatus": "Passcode"
+    },
+    "MalwareEvents": {
+      "SubTitle": "Malware Events",
+      "Date": "Date",
+      "Action": "Action",
+      "Type": "Type",
+      "InfectedObject": "Infected Object"
+    },
+    "SecureApps": {
+      "Status": "Status",
+      "Date": "Date",
+      "AppName":  "App Name"
+    }
+
+
+  },
+
+  "SideBar": {
+    "Dashboard": "DASHBOARD",
+    "Logout": "LOGOUT"
+  },
+
+  "PagesLogin": {
+    "ForgotYourPassword": "Forgot your password?",
+    "NotValidUserNamePassword": "User name or password entered are not associated to an Active account. Please try again.",
+    "AccountDisabled": "Your User Account has been disabled."
+  },
+
+  "PagesResetPassword": {
+    "ResetPassword": "Reset Password",
+    "Reset": "Reset",
+    "UserPrompt": "If the user name is associated with an active account, please check your email to reset your password.",
+    "UserNameRequired": "User Name is required."
+  },
+
+  "PagesEmailVerify": {
+    "EmailVerify": "Email Verify",
+    "LinkUsedError": "The link you have clicked has already been used. To set/reset your account password click <a href='{{hrefValue}}'>here</a>."
+  },
+
+  "PagesChangePassword": {
+    "ConfirmPassword": "Confirm Password",
+    "PasswordlengthRequirement": "Passwords must be at least 6 characters",
+    "PasswordSymbolRequirement": "have at least one non alphanumeric character including #?!@$%^&*-",
+    "PasswordLowercaseRequirement": "have at least one lowercase ('a'-'z')",
+    "PasswordUpppercaseRequirement": "have at least one uppercase ('A'-'Z')",
+    "PasswordNumberRequirement": "have at least one number ('0' - '9')",
+    "PasswordRequiredError": "Password is required",
+    "PasswordRequirementNotMet": "Password doesn't meet the requirement",
+    "ConfirmPasswordRequiredError": "Confirm Password is required.",
+    "ConfirmPasswordNotMatching": "Confirm Password is not the same as Password.",
+    "ChangePasswordSuccess": "Your new password has been set successfully.",
+    "ChangePasswordFailed": "Error, failed to reset password."
+  },
+
+  "Message": {
+    "UserNameAlreadyExist": "User Name has already been used, please select another one.",
+    "GeneralDbError": "Failed to add to database.",
+    "UserDoesNotExist": "User doesn't exist.",
+    "DeletionFailed": "System failed to delete.",
+    "UserDisablingFailed": "System failed to disable the user.",
+    "UserEnablingFailed": "System failed to enable the user.",
+    "UserDisabled": "User has been locked or disabled.",
+    "LinkPreviouslyOpened": "The provided link has previously been opened.",
+    "PasswordsNotMatch": "The provided passwords don't match with each other.",
+    "PasswordSetFailed": "System failed to set the password, please try again.",
+    "InvalidRole": "The provided role is invalid."
+  }
+}

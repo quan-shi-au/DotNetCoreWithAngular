@@ -1,0 +1,10 @@
+<div>
+    <button type="button" class="close" (click)="closeIt();">&times;</button>
+    <h4 class="modal-title manager-modal-caption">{{caption}}</h4>
+</div>
+
+<div class="card-header">
+    <div class="form-group" [ngClass]="{'manager-reset-margin' : resetMargin}">
+        <label class="manager-modal-title">{{title}}</label>
+    </div>
+</div>

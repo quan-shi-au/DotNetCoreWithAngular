@@ -1,0 +1,12 @@
+ent.manager.Presentation/dist/
+dist/
+vs_db_projects/ent.manager.DB/ent.manager.DB.dbmdl
+vs_db_projects/ent.manager.DB/ent.manager.DB.jfm
+vs_db_projects/ent.manager.DB/obj/
+vs_db_projects/ent.manager.DB/bin/
+.vs/
+ent.manager.Entity/obj/project.assets.json
+ent.manager.Entity/bin/Debug/netcoreapp1.1/ent.manager.Entity.deps.json
+ent.manager.Entity/obj/ent.manager.Entity.csproj.nuget.g.props
+ent.manager.Entity/obj/Debug/netcoreapp1.1/ent.manager.Entity.csproj.FileListAbsolute.txt
+/ent.manager.Presentation

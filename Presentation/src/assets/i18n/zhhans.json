@@ -1,0 +1,179 @@
+﻿{
+  "Common": {
+    "SubscriptionName": "合约名称",
+    "Created": "生成日期",
+    "EnterpriseSeats": "公司设备",
+    "Status": "状态",
+    "Details": "详细",
+    "Login": "登录",
+    "UserName": "用户名",
+    "Password": "密码",
+    "Language": "语言",
+    "EnterpriseApplication": "程序名称",
+    "FirstName": "名",
+    "LastName": "姓",
+    "OptionalData": "其他",
+    "Search": "搜索",
+    "SearchFilter": "搜索",
+    "GeneralServerError": "服务器出错",
+    "No": "取消",
+    "AreYouSure": "请确认"
+  },
+
+  "DashboardOverview": {
+    "PageTitle": "ent企业管理平台",
+    "PageSubtitle": "您的仪表板概述了为您的企业创建的所有企业订阅。",
+    "View": "进入",
+    "NoEnterprises": "无公司",
+    "NoSubscriptions": " 无合约"
+  },
+
+  "DashboardLicence": {
+    "SubscriptionDetails": "合约详细",
+    "EnterpriseSeatOverview": "企业设备概述",
+    "EnterpriseApplication": "程序名称：",
+    "Enterprise": "公司：",
+    "SubscriptionSeats": "设备的最大数量:",
+    "ManagingPartner": "合作伙伴：",
+    "SubscriptionCreated": "生成日期：",
+    "Usage": "安裝",
+    "DeviceOsVersion": "设备操作系统",
+    "DeviceManufacturer": "设备生产商",
+    "DeviceType": "设备种类",
+    "NoDataAvailable": "无数据",
+    "NoSeatDataAvailable": "没有可用的设备数据",
+    "EnterpriseSeatDetails": "企业设备详细信息",
+    "LicenceKey": "许可证号:",
+    "ReportDate": "报告日期",
+    "Active": "使用中",
+    "Available": "未使用",
+    "ReportNotAvailable": "订阅报告不可用",
+    "DownloadLocation": "下载位置:",
+
+    "grid": {
+      "DeviceName": "设备名",
+      "DeviceModel": "型号",
+      "OsVersion": "操作系统",
+      "ActivationDate": "激活日期",
+      "LastUpdatedDate": "最近更新日期",
+      "Deactivate": "取消",
+      "Deviceevents": "事件"
+    }
+  },
+
+  "SeatDetail": {
+    "SeatDetailButton": "设备详情",
+    "SeatDetailTitle": "设备详细信息管理",
+    "SeatDetailSubTitle": "管理设备",
+    "SeatDeactivateSuccessful": "设备已成功停用。 该报告将在下一次计划时更新。",
+    "SeatDeactivateFailed": "无法停用设备。",
+    "SeatDeactivateWarning": "如果取消{{deviceName}}移动系统安全程序，移动设备将不再受保护。",
+    "SeatDeactivateConfirm": "确认"
+  },
+
+  "DeviceEvents": {
+    "Title": "设备事件",
+    "SubTitle": "设备事件",
+    "DeviceHealth": "设备健康",
+    "ActivationDate": "激活日期:",
+    "LastUpdated": "最近更新时间",
+    "DeviceInformationSubTitle": "设备信息",
+    "DeviceSpecsSubTitle": "设备规格",
+    "FeatureStatusSubTitle": "功能状态",
+    "HistorySubTitle": "历史",
+    "HistorySecureApps": "安全程序",
+    "WebProtect": "网络保护",
+    "DeviceHealthPanel": {
+      "DescriptionGreen": "Your device is protected",
+      "DescriptionYellow": "Your device protection status is unknown",
+      "DescriptionRed": "Your device is not protected"
+    },
+    "DeviceInformation": {
+      "Name": "名称",
+      "Type": "类型",
+      "Model": "型号",
+      "PlatformVersion": "平台版本",
+      "Architecture": "结构",
+      "Memory": "存储"
+    },
+    "ScanSummary": {
+      "SubTitle": "扫描摘要",
+      "AndroidType": "Type",
+      "AndroidDate": "Date",
+      "Duration": "Duration",
+      "ScannedApps": "Scanned Apps",
+      "MaliciousApps": "Malicious Apps",
+      "IosType": "Type of Scan",
+      "IosDate": "Scan Date",
+      "StartupStatus": "Startup Initialisation",
+      "InternetStatus": "Internet Enabled",
+      "PasscodeStatus": "Passcode"
+    },
+    "MalwareEvents": {
+      "SubTitle": "病毒事件",
+      "Date": "日期",
+      "Action": "行动",
+      "Type": "类型",
+      "InfectedObject": "受感染程序"
+    },
+    "SecureApps": {
+      "Status": "状态",
+      "Date": "日期",
+      "AppName": "程序名称"
+    }
+
+
+  },
+
+  "SideBar": {
+    "Dashboard": "平台",
+    "Logout": "退出"
+  },
+
+  "PagesLogin": {
+    "ForgotYourPassword": "忘记密码？",
+    "NotValidUserNamePassword": "无法确认用戶名和密码，请重新再试。",
+    "AccountDisabled": "账户被暂停使用。"
+  },
+
+  "PagesResetPassword": {
+    "ResetPassword": "重新设定密码",
+    "Reset": "重设",
+    "UserPrompt": "如果用户名有效，请查阅您的电子邮件。",
+    "UserNameRequired": "请输入用户名"
+  },
+
+  "PagesEmailVerify": {
+    "EmailVerify": "电子邮件确认",
+    "LinkUsedError": "连接已经被使用。请点击<a href='{{hrefValue}}'>这儿</a>重新设置密码。"
+  },
+
+  "PagesChangePassword": {
+    "ConfirmPassword": "密码确认",
+    "PasswordlengthRequirement": "密码至少有六个字符",
+    "PasswordSymbolRequirement": "密码必须包括下列符号 #?!@$%^&*-",
+    "PasswordLowercaseRequirement": "密码必须包括小写字母 ('a'-'z')",
+    "PasswordUpppercaseRequirement": "密码必须包括大写字母 ('A'-'Z')",
+    "PasswordNumberRequirement": "至少有一个数字（'0' - '9'）",
+    "PasswordRequiredError": "请输入密码",
+    "PasswordRequirementNotMet": "密码不符合要求",
+    "ConfirmPasswordRequiredError": "请输入密码确认",
+    "ConfirmPasswordNotMatching": "密码确认不匹配",
+    "ChangePasswordSuccess": "密码设置成功。",
+    "ChangePasswordFailed": "密码设置出错。"
+  },
+
+  "Message": {
+    "UserNameAlreadyExist": "用户名已存在， 请重新选择。",
+    "GeneralDbError": "数据库错。",
+    "UserDoesNotExist": "用户名不存在。",
+    "DeletionFailed": "系统无法删除。",
+    "UserDisablingFailed": "系统无法取消用户。",
+    "UserEnablingFailed": "系统无法重新激活用户。",
+    "UserDisabled": "用户已被取消。",
+    "LinkPreviouslyOpened": "连接已经被使用。",
+    "PasswordsNotMatch": "您提供的密码不匹配。",
+    "PasswordSetFailed": "系统无法设置密码，请重新再试。",
+    "InvalidRole": "您提供的用户角色无效，请重新再试。"
+  }
+}

@@ -1,0 +1,26 @@
+<div class="card manager-piechart">
+    <div class="card-header card-header-icon">
+        <i class="material-icons">{{title}}</i>
+    </div>
+    <div class="card-content">
+        <div class="row" [hidden]="!isChartAvailable">
+            <div class="col-lg-6 col-sm-6">
+                <div id="{{chartPreferencesId}}" class="ct-chart"></div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <ul class="manager-piechart-legends">
+                    <li *ngFor="let legend of legends; let sequence = index">
+                        <i class="fa fa-circle manager-pie-chunk{{sequence + 1}}"></i> &nbsp;{{legend}}
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row" [hidden]="isChartAvailable">
+            <div class="col-lg-12 col-sm-12 manager-piechart-nodata">
+                {{noChartMessage}}
+            </div>
+        </div>
+
+    </div>
+</div>

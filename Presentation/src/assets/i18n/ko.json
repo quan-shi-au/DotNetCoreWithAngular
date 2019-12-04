@@ -1,0 +1,179 @@
+﻿{
+  "Common": {
+    "SubscriptionName": "서브스크립션 이름",
+    "Created": "생성됨",
+    "EnterpriseSeats": "엔터프라이즈 장치",
+    "Status": "현황",
+    "Details": "세부사항",
+    "Login": "로그인",
+    "UserName": "사용자 이름",
+    "Password": "패스워드",
+    "Language": "언어",
+    "EnterpriseApplication": "엔터프라이즈 어플리케이션",
+    "FirstName": "이름",
+    "LastName": "성",
+    "OptionalData": "옵션 정보",
+    "Search": "검색",
+    "SearchFilter": "검색 필터",
+    "GeneralServerError": "서버 오류",
+    "No": "아니",
+    "AreYouSure": "확실합니까?"
+  },
+
+  "DashboardOverview": {
+    "PageTitle": "ent 엔터프라이즈 관리 플랫폼 대시보드",
+    "PageSubtitle": "당신의 대시보드는 모든 서브스크립션과 그 엔터프라이즈와 운영 파트너 관련 개요를 보여줍니다.",
+    "View": "보기",
+    "NoEnterprises": "기업 없음",
+    "NoSubscriptions": "구독이 없습니다"
+  },
+
+  "DashboardLicence": {
+    "SubscriptionDetails": "서브스크립션 세부사항",
+    "EnterpriseSeatOverview": "엔터프라이즈 장치 개요",
+    "EnterpriseApplication": "엔터프라이즈 어플리케이션:",
+    "Enterprise": "엔터프라이즈:",
+    "SubscriptionSeats": "최대 장치 수:",
+    "ManagingPartner": "운영 파트너:",
+    "SubscriptionCreated": "서브스크립션 생성 날짜:",
+    "Usage": "사용량",
+    "DeviceOsVersion": "기기 OS 버전",
+    "DeviceManufacturer": "기기 제조업체",
+    "DeviceType": "기기 타입",
+    "NoDataAvailable": "정보가 없습니다. ",
+    "NoSeatDataAvailable": "설치 정보가 없습니다",
+    "EnterpriseSeatDetails": "엔터프라이즈 장치 세부 정보",
+    "LicenceKey": "라이센스 키:",
+    "ReportDate": "보고서 실행 날짜",
+    "Active": "활용중",
+    "Available": "사용 가능",
+    "ReportNotAvailable": "구독 보고서를 사용할 수 없음",
+    "DownloadLocation": "다운로드 위치:",
+
+    "grid": {
+      "DeviceName": "기기 이름",
+      "DeviceModel": "기기 모델명",
+      "OsVersion": "OS 버전",
+      "ActivationDate": "활성된 날짜",
+      "LastUpdatedDate": "마지막으로 업데이트한 날짜",
+      "Deactivate": "비활성화하기",
+      "Deviceevents": "이벤트"
+    }
+  },
+
+  "SeatDetail": {
+    "SeatDetailButton": "장치 세부 정보",
+    "SeatDetailTitle": "장치 세부 정보 관리",
+    "SeatDetailSubTitle": "장치 관리",
+    "SeatDeactivateSuccessful": "장치가 성공적으로 비활성화되었습니다. 보고서는 다음에 예정 될 때 업데이트됩니다.",
+    "SeatDeactivateFailed": "기기를 비활성화하지 못했습니다.",
+    "SeatDeactivateWarning": "의 모바일 보안 애플리케이션을 비활성화 {{deviceName}} 장치가 더 이상 보호되지 않습니다 것을 의미합니다.",
+    "SeatDeactivateConfirm": "예, 비활성화하십시오"
+  },
+
+  "DeviceEvents": {
+    "Title": "장치 이벤트",
+    "SubTitle": "장치 이벤트",
+    "DeviceHealth": "기기 상태",
+    "ActivationDate": "활성화 날짜:",
+    "LastUpdated": "마지막 업데이트",
+    "DeviceInformationSubTitle": "장치 정보",
+    "DeviceSpecsSubTitle": "Device Specs",
+    "FeatureStatusSubTitle": "Feature Status",
+    "HistorySubTitle": "History",
+    "HistorySecureApps": "Secure Apps",
+    "WebProtect": "웹 보호",
+    "DeviceHealthPanel": {
+      "DescriptionGreen": "Your device is protected",
+      "DescriptionYellow": "Your device protection status is unknown",
+      "DescriptionRed": "Your device is not protected"
+    },
+    "DeviceInformation": {
+      "Name": "이름",
+      "Type": "유형",
+      "Model": "모델",
+      "PlatformVersion": "플랫폼 버전",
+      "Architecture": "건축물",
+      "Memory": "기억"
+    },
+    "ScanSummary": {
+      "SubTitle": "스캔 요약",
+      "AndroidType": "Type",
+      "AndroidDate": "Date",
+      "Duration": "Duration",
+      "ScannedApps": "Scanned Apps",
+      "MaliciousApps": "Malicious Apps",
+      "IosType": "Type of Scan",
+      "IosDate": "Scan Date",
+      "StartupStatus": "Startup Initialisation",
+      "InternetStatus": "Internet Enabled",
+      "PasscodeStatus": "Passcode"
+    },
+    "MalwareEvents": {
+      "SubTitle": "맬웨어 이벤트",
+      "Date": "Date",
+      "Action": "동작",
+      "Type": "유형",
+      "InfectedObject": "감염된 개체"
+    },
+    "SecureApps": {
+      "Status": "Status",
+      "Date": "Date",
+      "AppName": "App Name"
+    }
+
+
+  },
+
+  "SideBar": {
+    "Dashboard": "대시보드",
+    "Logout": "로그아웃"
+  },
+
+  "PagesLogin": {
+    "ForgotYourPassword": "패스워드를 잊으셨습니까?",
+    "NotValidUserNamePassword": "입력하신 사용자 이름과 패스워드는 사용중인 계정과 연관이 없습니다. 다시 시도해 주세요.",
+    "AccountDisabled": "당신의 계정이 비활성화 되었습니다."
+  },
+
+  "PagesResetPassword": {
+    "ResetPassword": "패스워드  재설정",
+    "Reset": "재설정",
+    "UserPrompt": "입력하신 사용자 이름이 사용중인 계정과 연결되어 있다면, 실행을 위한 이메일을  받게 됩니다.",
+    "UserNameRequired": "사용자 이름이 필요합니다."
+  },
+
+  "PagesEmailVerify": {
+    "EmailVerify": "이메일 확인",
+    "LinkUsedError": "클릭하신 링크는 이미 사용중입니다. 계정 패스워드를 설정/재설정하기려면 <a href='{{hrefValue}}'>here</a>를 클릭하십시오."
+  },
+
+  "PagesChangePassword": {
+    "ConfirmPassword": "패스워드 확인",
+    "PasswordlengthRequirement": "패스워드는 적어도 6자 이상이어야 합니다.",
+    "PasswordSymbolRequirement": "#?!@$%^&*-와 같이 적어도 하나의 알파벳이 아닌 문자가 있어야합니다.",
+    "PasswordLowercaseRequirement": "적어도 하나의 소문자 ('a'-'z')가 있어야합니다.",
+    "PasswordUpppercaseRequirement": "적어도 하나의 대문자('A'-'Z')가 있어야합니다.",
+    "PasswordNumberRequirement": "적어도 하나의 숫자 ( '0'- '9')가 있어야합니다.",
+    "PasswordRequiredError": "패스워드가 필요합니다.",
+    "PasswordRequirementNotMet": "패스워드 요구 조건을 충족하지 않습니다.",
+    "ConfirmPasswordRequiredError": "패스워드 확인이 필요합니다.",
+    "ConfirmPasswordNotMatching": "확인하신 패스워드가 입력하신 패스워드와 일치하지 않습니다.",
+    "ChangePasswordSuccess": "새로운 패스워드가 성공적으로 설정되었습니다.",
+    "ChangePasswordFailed": "오류발생, 패스워드를 재설정하는데 실패했습니다."
+  },
+
+  "Message": {
+    "UserNameAlreadyExist": "입력하신 사용자 이름은 이미 사용중입니다. 새로 선택하십시오.",
+    "GeneralDbError": "데이터베이스에 추가하지 못했습니다.",
+    "UserDoesNotExist": "사용자가 존재하지 않습니다.",
+    "DeletionFailed": "삭제에 실패했습니다.",
+    "UserDisablingFailed": "사용자 비활성화에 실패했습니다.",
+    "UserEnablingFailed": "사용자 활성화에 실패했습니다.",
+    "UserDisabled": "사용자 계정이 잠겨 있거나 사용하지 않도록 설정되었습니다.",
+    "LinkPreviouslyOpened": "클릭한 링크가 만료되었습니다.",
+    "PasswordsNotMatch": "제공하신 패스워드가 서로 일치하지 않습니다.",
+    "PasswordSetFailed": "패스워드 설정에 실패했습니다. 다시 시도하십시오.",
+    "InvalidRole": "제공하신 롤이 잘못되었습니다. "
+  }
+}

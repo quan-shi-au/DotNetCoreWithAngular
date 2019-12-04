@@ -1,0 +1,137 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9A46ADC-83A7-4985-9E5D-3EF89277E9B9}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ent.manager.DB", "vs_db_projects\ent.manager.DB\ent.manager.DB.sqlproj", "{C13BE9BF-4B87-4CF1-9B5D-2864CDDCA3B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ent.manager.Presentation", "ent.manager.Presentation\ent.manager.Presentation.csproj", "{EAF63D21-9FA2-4676-99F7-F28627F97E34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ent.manager.WebApi", "ent.manager.WebApi\ent.manager.WebApi.csproj", "{491AA719-E032-40D0-84F2-4CB12D0B5D5A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ent.manager.Services", "ent.manager.Services\ent.manager.Services.csproj", "{070B0282-9D54-41B2-9960-9C73B7FF9CD3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ent.manager.Data", "ent.manager.Data\ent.manager.Data.csproj", "{2ECAA8A7-5621-4218-895D-FCD6B15AAC29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ent.manager.Entity", "ent.manager.Entity\ent.manager.Entity.csproj", "{86F2CD5A-B7E0-4B7C-9B49-EAF75E5AF627}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ent.manager.Licence", "ent.manager.Licence\ent.manager.Licence.csproj", "{4339FB38-30BC-475E-AC4E-C4818B692D54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ent.manager.Logging", "ent.manager.Logging\ent.manager.Logging.csproj", "{D58EC606-15BF-479A-9526-BA700AAF723F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ent.manager.Reporting", "ent.manager.Reporting\ent.manager.Reporting.csproj", "{55CB74CD-3F72-4FDA-BCE2-BA17FC747E86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shells", "shells", "{4220CA71-ED0E-4A54-899B-1FD8B4965CCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{61EF197D-0664-49EA-B9CC-22A2DFADAE28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ent.manager.Tools.UserDataProcessor", "ent.manager.Tools.UserDataProcessor\ent.manager.Tools.UserDataProcessor.csproj", "{46602104-6063-40FA-8805-681BD8002ABE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{1A68F06F-37C0-4A6B-BD96-564163E12C0A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ent.manager.Reporting.Test", "ent.manager.Reporting.Test\ent.manager.Reporting.Test.csproj", "{DF8AC903-ACBF-41DB-8922-327A2199F3BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C13BE9BF-4B87-4CF1-9B5D-2864CDDCA3B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13BE9BF-4B87-4CF1-9B5D-2864CDDCA3B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13BE9BF-4B87-4CF1-9B5D-2864CDDCA3B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C13BE9BF-4B87-4CF1-9B5D-2864CDDCA3B7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EAF63D21-9FA2-4676-99F7-F28627F97E34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF63D21-9FA2-4676-99F7-F28627F97E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{491AA719-E032-40D0-84F2-4CB12D0B5D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{491AA719-E032-40D0-84F2-4CB12D0B5D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{491AA719-E032-40D0-84F2-4CB12D0B5D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{491AA719-E032-40D0-84F2-4CB12D0B5D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{070B0282-9D54-41B2-9960-9C73B7FF9CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{070B0282-9D54-41B2-9960-9C73B7FF9CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{070B0282-9D54-41B2-9960-9C73B7FF9CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{070B0282-9D54-41B2-9960-9C73B7FF9CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ECAA8A7-5621-4218-895D-FCD6B15AAC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ECAA8A7-5621-4218-895D-FCD6B15AAC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ECAA8A7-5621-4218-895D-FCD6B15AAC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ECAA8A7-5621-4218-895D-FCD6B15AAC29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F2CD5A-B7E0-4B7C-9B49-EAF75E5AF627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F2CD5A-B7E0-4B7C-9B49-EAF75E5AF627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F2CD5A-B7E0-4B7C-9B49-EAF75E5AF627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F2CD5A-B7E0-4B7C-9B49-EAF75E5AF627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4339FB38-30BC-475E-AC4E-C4818B692D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4339FB38-30BC-475E-AC4E-C4818B692D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4339FB38-30BC-475E-AC4E-C4818B692D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4339FB38-30BC-475E-AC4E-C4818B692D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D58EC606-15BF-479A-9526-BA700AAF723F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58EC606-15BF-479A-9526-BA700AAF723F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D58EC606-15BF-479A-9526-BA700AAF723F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D58EC606-15BF-479A-9526-BA700AAF723F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55CB74CD-3F72-4FDA-BCE2-BA17FC747E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CB74CD-3F72-4FDA-BCE2-BA17FC747E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55CB74CD-3F72-4FDA-BCE2-BA17FC747E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55CB74CD-3F72-4FDA-BCE2-BA17FC747E86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46602104-6063-40FA-8805-681BD8002ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46602104-6063-40FA-8805-681BD8002ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46602104-6063-40FA-8805-681BD8002ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46602104-6063-40FA-8805-681BD8002ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8AC903-ACBF-41DB-8922-327A2199F3BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8AC903-ACBF-41DB-8922-327A2199F3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8AC903-ACBF-41DB-8922-327A2199F3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8AC903-ACBF-41DB-8922-327A2199F3BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4220CA71-ED0E-4A54-899B-1FD8B4965CCE} = {B9A46ADC-83A7-4985-9E5D-3EF89277E9B9}
+		{46602104-6063-40FA-8805-681BD8002ABE} = {61EF197D-0664-49EA-B9CC-22A2DFADAE28}
+		{DF8AC903-ACBF-41DB-8922-327A2199F3BA} = {1A68F06F-37C0-4A6B-BD96-564163E12C0A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {71795198-CE75-40B9-A744-BF164BE60B54}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ent.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ent.manager.Data\\ent.manager.Data.csproj
+		SccProjectName1 = ent.manager.Data
+		SccLocalPath1 = ent.manager.Data
+		SccProjectUniqueName2 = vs_db_projects\\ent.manager.DB\\ent.manager.DB.sqlproj
+		SccProjectName2 = vs_db_projects/ent.manager.DB
+		SccLocalPath2 = vs_db_projects\\ent.manager.DB
+		SccProjectUniqueName3 = ent.manager.WebApi\\ent.manager.WebApi.csproj
+		SccProjectName3 = ent.manager.WebApi
+		SccLocalPath3 = ent.manager.WebApi
+		SccProjectUniqueName4 = ent.manager.Services\\ent.manager.Services.csproj
+		SccProjectName4 = ent.manager.Services
+		SccLocalPath4 = ent.manager.Services
+		SccProjectUniqueName5 = ent.manager.Entity\\ent.manager.Entity.csproj
+		SccProjectName5 = ent.manager.Entity
+		SccLocalPath5 = ent.manager.Entity
+		SccProjectUniqueName6 = ent.manager.Licence\\ent.manager.Licence.csproj
+		SccProjectName6 = ent.manager.Licence
+		SccLocalPath6 = ent.manager.Licence
+		SccProjectUniqueName7 = ent.manager.Logging\\ent.manager.Logging.csproj
+		SccProjectName7 = ent.manager.Logging
+		SccLocalPath7 = ent.manager.Logging
+		SccProjectUniqueName8 = ent.manager.Presentation\\ent.manager.Presentation.csproj
+		SccProjectName8 = ent.manager.Presentation
+		SccLocalPath8 = ent.manager.Presentation
+		SccProjectUniqueName9 = ent.manager.Reporting\\ent.manager.Reporting.csproj
+		SccProjectName9 = ent.manager.Reporting
+		SccLocalPath9 = ent.manager.Reporting
+		SccProjectUniqueName10 = ent.manager.Tools.UserDataProcessor\\ent.manager.Tools.UserDataProcessor.csproj
+		SccProjectTopLevelParentUniqueName10 = ent.manager.sln
+		SccProjectName10 = ent.manager.Tools.UserDataProcessor
+		SccLocalPath10 = ent.manager.Tools.UserDataProcessor
+		SccProjectUniqueName11 = ent.manager.Reporting.Test\\ent.manager.Reporting.Test.csproj
+		SccProjectTopLevelParentUniqueName11 = ent.manager.sln
+		SccProjectName11 = ent.manager.Reporting.Test
+		SccLocalPath11 = ent.manager.Reporting.Test
+	EndGlobalSection
+EndGlobal
